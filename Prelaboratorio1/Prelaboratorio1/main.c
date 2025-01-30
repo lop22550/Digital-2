@@ -51,7 +51,7 @@ int main(void)
     {
        if (salida == 1)
        {conteo_salida(salida);
-       }
+       }else {displayP(1);}
        
 		boton1(count1);  //LEDs AZULES
 		boton2(count2);  //LEDs ROJOS
@@ -102,7 +102,8 @@ void initPorts(void){
 void conteo_salida (uint8_t salida){
 	if (salida == 1)
 	{
-		DDRB = 0b111111;  //Se desactivan botones
+		DDRB |= (1 << PORTB4);  //Se desactivan botones
+		DDRB |= (1 << PORTB5);
 		DDRC |= (1 << PORTC0);
 		salida = 0;		
 		displayNum(5);
@@ -116,9 +117,9 @@ void conteo_salida (uint8_t salida){
 		displayNum(1);
 		_delay_ms(1000);
 		displayNum(0);
-		DDRB = 0b001111;  //Se activan botones
+		DDRB &= ~(1 << PORTB4);  //Se activan botones
+		DDRB &= ~(1 << PORTB5);
 		DDRC &= ~(1 << PORTC0);
-		
 	} else{
 		displayP(1);
 	}
@@ -126,7 +127,7 @@ void conteo_salida (uint8_t salida){
 }
 
 void boton1(uint8_t count1){  //LEDs AZULES
-	if (count1 > 4)
+	if (count1 >= 4)
 	{
 		count1 = 0;
 		PORTB &= ~((1<<PORTB0)|(1<<PORTB1)|(1<<PORTB2)|(1<<PORTB3));
@@ -156,9 +157,10 @@ void boton1(uint8_t count1){  //LEDs AZULES
 }
 
 void boton2(uint8_t count2){  //LEDs ROJOS
-	if (count2 == 4)
+	if (count2 >= 4)
 	{
 		count2 = 0;
+		PORTB &= ~((1<<PORTB0)|(1<<PORTB1)|(1<<PORTB2)|(1<<PORTB3));
 		displayNum(2);
 	}else{
 		switch (count2){
