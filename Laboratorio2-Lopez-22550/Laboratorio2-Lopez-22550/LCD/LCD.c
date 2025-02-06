@@ -27,7 +27,7 @@
 void initLCD8bits(void){
 	//Configurar los puertos como salidas 
 	DDRD |= ((1<<DDD2)|(1<<DDD3)|(1<<DDD4)|(1<<DDD5)|(1<<DDD6)|(1<<DDD7));
-	PORTD &= ~((1<<DDD2)|(1<<DDD3)|(1<<DDD4)|(1<<DDD5)|(1<<DDD6)|(1<<DDD7));
+	PORTD &= ~((1<<PORTD2)|(1<<PORTD3)|(1<<PORTD4)|(1<<PORTD5)|(1<<PORTD6)|(1<<PORTD7));
 	
 	DDRB |= ((1<<DDB0)|(1<<DDB1)|(1<<DDB2)|(1<<DDB3)|(1<<DDB4)|(1<<DDB5));
 	PORTB = 0;
@@ -37,25 +37,27 @@ void initLCD8bits(void){
 	//Pause 15 ms
 	_delay_ms(20);
 	//Function set
-	LCD_CMD(0b00111000);
+	LCD_CMD(0x38);
 	//Pause 100us
-	
+	_delay_us(110);
+
 	//Display on/off
-	LCD_CMD(0b00001100);
+	LCD_CMD(0x0C);
 	//Pause 100us
-	
+	_delay_us(110);
 	//Entry mode
-	LCD_CMD(0b00000110);
+	LCD_CMD(0x06);
 	//Pause 100us
-	
+	_delay_us(110);
 	//Clear display
-	LCD_CMD(0b00000001);
+	LCD_CMD(0x01);
+	
 	
 	
 }
 void initLCD4bits(void){
-	/*
-	Ejemplo de Pablo 
+	
+	//Ejemplo de Pablo 
 	
 	DDRC |= ((1<<DDC0)|(1<<DDC1)|(1<<DDC2)|(1<<DDC3)|(1<<DDC4));
 	PORTC = 0;
@@ -85,7 +87,7 @@ void initLCD4bits(void){
 	
 	//Clear display 
 	LCD_CMD(0x00);
-	LCD_CMD(0x01);*/
+	LCD_CMD(0x01);
 	
 }
 //Función para enviar un comando
@@ -98,6 +100,18 @@ void LCD_CMD(char a){
 		_delay_ms(4);
 		//EN = 0; // => E = 0
 		PORTD &= ~(1<<PORTD4);
+		
+		/* EJEMPLO PABLO
+		//RS = 0; // => RS = 0 // Dato en el puerto lo va interpretar como comando
+		PORTC &= ~(1<<PORTC0);
+		LCD_Port(a);
+		//EN = 1;  // => E = 1
+		PORTC |= (1<<PORTC1);
+		_delay_ms(4);
+		//EN = 0; // => E = 0
+		PORTC &= ~(1<<PORTC1);*/
+		
+		
 }
 
 //Función para colocar en el puerto un valor
@@ -151,6 +165,35 @@ void LCD_Port(char a){
 	PORTB |= (1<<PORTB4); //D7 = 1
 	else
 	PORTB &= ~(1<<PORTB4); //D7 = 0
+	
+	
+	/*EJEMPLO PABLO
+	if (a & 1)
+	PORTC |= (1<<PORTC2);  //D0 = 1
+	else
+	PORTC &= ~(1<<PORTC2); //D0 = 0
+	
+	
+	
+	if (a & 2)
+	PORTC |= (1<<PORTC3); //D1 = 1
+	else
+	PORTC &= ~(1<<PORTC3); //D1 = 0
+	
+	
+	
+	if (a & 4)
+	PORTC |= (1<<PORTC4);//D2 = 1
+	else
+	PORTC &= ~(1<<PORTC4); //D2 = 0
+	
+	
+	
+	if (a & 8)
+	PORTC |= (1<<PORTC5); //D3 = 1
+	else
+	PORTC &= ~(1<<PORTC5); //D3 = 0*/
+	
 }
 
 
@@ -162,8 +205,23 @@ void LCD_Write_Char(char caracter){
 	LCD_Port(caracter);
 	//EN = 1; => E = 1
 	PORTD |= (1<<PORTD4);
-	_delay_ms(4);
+	_delay_ms(10);
 	PORTD &= ~(1<<PORTD4);
+	/*
+	char Cbajo, Calto;
+	Cbajo = caracter & 0x0F;
+	Calto = (caracter & 0x0F)>>4;
+	
+	PORTC |= (1<<PORTC0);
+	LCD_Port(Calto);
+	PORTC |= (1<<PORTC1);
+	_delay_ms(4);
+	PORTC &= ~(1<<PORTC1);
+	LCD_Port(Cbajo);
+	PORTC |= (1<<PORTC1);
+	_delay_ms(4);
+	PORTC &= ~(1<<PORTC1);*/
+
 }
 
 

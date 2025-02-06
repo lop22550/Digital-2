@@ -33,13 +33,17 @@ LINKER_SCRIPT_DEP:=
 
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
-../LCD
+../LCD \
+../ADC \
+../UART9600
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../ADC/ADC.c \
 ../LCD/LCD.c \
-../main.c
+../main.c \
+../UART9600/UART9600.c
 
 
 PREPROCESSING_SRCS += 
@@ -49,20 +53,28 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+ADC/ADC.o \
 LCD/LCD.o \
-main.o
+main.o \
+UART9600/UART9600.o
 
 OBJS_AS_ARGS +=  \
+ADC/ADC.o \
 LCD/LCD.o \
-main.o
+main.o \
+UART9600/UART9600.o
 
 C_DEPS +=  \
+ADC/ADC.d \
 LCD/LCD.d \
-main.d
+main.d \
+UART9600/UART9600.d
 
 C_DEPS_AS_ARGS +=  \
+ADC/ADC.d \
 LCD/LCD.d \
-main.d
+main.d \
+UART9600/UART9600.d
 
 OUTPUT_FILE_PATH +=Laboratorio2-Lopez-22550.elf
 
@@ -78,6 +90,13 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+ADC/ADC.o: ../ADC/ADC.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.36
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega328P  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega328P__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 LCD/LCD.o: ../LCD/LCD.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
@@ -86,6 +105,13 @@ LCD/LCD.o: ../LCD/LCD.c
 	
 
 ./main.o: .././main.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.36
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega328P  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega328P__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+UART9600/UART9600.o: ../UART9600/UART9600.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega328P  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega328P__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

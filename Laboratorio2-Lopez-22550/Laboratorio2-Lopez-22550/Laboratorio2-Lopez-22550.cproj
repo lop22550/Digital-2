@@ -104,6 +104,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ADC\ADC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ADC\ADC.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="LCD\LCD.c">
       <SubType>compile</SubType>
     </Compile>
@@ -113,9 +119,17 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="UART9600\UART9600.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="UART9600\UART9600.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LCD" />
+    <Folder Include="ADC" />
+    <Folder Include="UART9600" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

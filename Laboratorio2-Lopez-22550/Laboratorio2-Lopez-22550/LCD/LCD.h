@@ -39,7 +39,7 @@ void LCD_Write_Char(char caracter);
 void LCD_Write_String(char *a);
 void LCD_Shift_Right(void);
 void LCD_Shift_Left(void);
-void LCD_Set_Cursor(char columna, char fila);
+void LCD_Set_Cursor(char caracter, char fila);
 
 
 #endif /* LCD_H_ */
