@@ -6,6 +6,8 @@
  */ 
 
 #include "LCD.h"
+#include <stdint.h>
+#include <string.h>
 
 
 /*
@@ -228,8 +230,12 @@ void LCD_Write_Char(char caracter){
 //Función para enviar una cadena
 void LCD_Write_String(char *a){
 	int i;
-	for (i=0; a[i] != '\0'; i++)
-	LCD_Write_Char(a[i]);
+	
+	for (i=0; a[i]!='\0'; i++){
+		LCD_Write_Char(a[i]);
+	}
+	
+	
 }
 
 //Desplazamiento hacia la derecha
@@ -243,20 +249,13 @@ void LCD_Shift_Left(void){
 	LCD_CMD(0x08);
 }
 
-void LCD_Set_Cursor(char caracter, char fila){
-	char temp, z, y; 
+void LCD_Set_Cursor(int columna, int fila){
+	int coordenada = 0;
 	if (fila == 1){
-		temp = 0x80 + caracter - 1;
-		z = temp >> 4;  
-		y = temp & 0x0F; 
-		LCD_CMD(z);
-		LCD_CMD(y); 
+		coordenada = 0x80 + columna;
 	} else if (fila == 2)
 	{
-		temp = 0xC0 + caracter - 1;
-		z = temp >> 4;
-		y = temp & 0x0F;
-		LCD_CMD(z);
-		LCD_CMD(y);
+		coordenada = 0xC0 + columna;
 		}
+		LCD_CMD(coordenada);
 }

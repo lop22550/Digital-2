@@ -15,7 +15,8 @@ LCD/LCD.d LCD/LCD.o: ../LCD/LCD.c ../LCD/LCD.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\delay.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay_basic.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h
+ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h \
+ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\string.h
 
 ../LCD/LCD.h:
 
@@ -52,3 +53,5 @@ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:
 c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay_basic.h:
 
 c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h:
+
+c:\program\ files\microchip\xc8\v2.36\avr\avr\include\string.h:

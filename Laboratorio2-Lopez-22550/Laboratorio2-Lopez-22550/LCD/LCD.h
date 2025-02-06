@@ -12,6 +12,10 @@
 #define  F_CPU 16000000
 #include <avr/io.h>
 #include <avr/delay.h>
+#include <stdint.h>
+#include <string.h>
+
+
 
 /*
  * PUERTOS UTILIZADOS DEL ARDUINO NANO
@@ -39,7 +43,7 @@ void LCD_Write_Char(char caracter);
 void LCD_Write_String(char *a);
 void LCD_Shift_Right(void);
 void LCD_Shift_Left(void);
-void LCD_Set_Cursor(char caracter, char fila);
+void LCD_Set_Cursor(int columna, int fila);
 
 
 #endif /* LCD_H_ */
