@@ -17,20 +17,19 @@
 #include <avr/interrupt.h>
 #include <stdint.h>
 #include <string.h>
-#include <avr/pgmspace.h>
 
 
 
 
 uint8_t valor_adc = 0;
 volatile char bufferRX;
-char cadena[] = "Mundo";
+char cadena[];
 
 #include "LCD/LCD.h"
 
 int main(void)
 {
-	//initADC();
+	initADC();
 	initLCD8bits();
 		_delay_ms(2);
 	LCD_Set_Cursor(0,1);
@@ -73,11 +72,6 @@ void ConvertADC(uint8_t conversionADC){
 
 
 ISR (ADC_vect){
-	/*PORTB &= ~(1<<PB0); //Se apagan los LEDS del contador binario
-	PORTB |= (1<<PB1);	//Se encienden los displays de 7 segmentos de unidades.
-	PORTB |= (1<<PB2);*/
-	
-	//uint8_t 
 	valor_adc = ADCH; // 1010 1110 & 0000 1111
 	ADCSRA |= (1<<ADIF);
 	ADCSRA |= (1<<ADSC);
@@ -86,11 +80,6 @@ ISR (ADC_vect){
 
 ISR(USART_RX_vect){
 	bufferRX = UDR0;
-	
-	
 
-		
-		//while (!(UCSR0A & (1<<UDRE0)));
-		//UDR0 = bufferRX;
 		
 	}
