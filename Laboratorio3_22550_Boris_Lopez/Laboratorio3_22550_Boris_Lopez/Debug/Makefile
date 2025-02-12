@@ -33,11 +33,13 @@ LINKER_SCRIPT_DEP:=
 
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
+../ADC \
 ../SPI
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../ADC/ADC.c \
 ../main.c \
 ../SPI/SPI.c
 
@@ -49,24 +51,28 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+ADC/ADC.o \
 main.o \
 SPI/SPI.o
 
 OBJS_AS_ARGS +=  \
+ADC/ADC.o \
 main.o \
 SPI/SPI.o
 
 C_DEPS +=  \
+ADC/ADC.d \
 main.d \
 SPI/SPI.d
 
 C_DEPS_AS_ARGS +=  \
+ADC/ADC.d \
 main.d \
 SPI/SPI.d
 
-OUTPUT_FILE_PATH +=Laboratorio3_22550.elf
+OUTPUT_FILE_PATH +=Laboratorio3_22550_Boris_Lopez.elf
 
-OUTPUT_FILE_PATH_AS_ARGS +=Laboratorio3_22550.elf
+OUTPUT_FILE_PATH_AS_ARGS +=Laboratorio3_22550_Boris_Lopez.elf
 
 ADDITIONAL_DEPENDENCIES:=
 
@@ -78,6 +84,13 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+ADC/ADC.o: ../ADC/ADC.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.36
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega328P  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega328P__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 ./main.o: .././main.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
@@ -118,11 +131,11 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER_SCRIPT_DEP)
 	@echo Building target: $@
 	@echo Invoking:  XC8 C Linker : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -mcpu=ATmega328P  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -Wl,-Map="Laboratorio3_22550.map" -funsigned-char -funsigned-bitfields -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums --memorysummary,memoryfile.xml  
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -mcpu=ATmega328P  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -Wl,-Map="Laboratorio3_22550_Boris_Lopez.map" -funsigned-char -funsigned-bitfields -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums --memorysummary,memoryfile.xml  
 	@echo Finished building target: $@
-	"C:\Program Files\Microchip\xc8\v2.36\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Laboratorio3_22550.elf" "Laboratorio3_22550.hex"
-	"C:\Program Files\Microchip\xc8\v2.36\bin\avr-objcopy.exe" -j .eeprom --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0 --no-change-warnings -O ihex "Laboratorio3_22550.elf" "Laboratorio3_22550.eep" || exit 0
-	"C:\Program Files\Microchip\xc8\v2.36\bin\avr-objdump.exe" -h -S "Laboratorio3_22550.elf" > "Laboratorio3_22550.lss"
+	"C:\Program Files\Microchip\xc8\v2.36\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Laboratorio3_22550_Boris_Lopez.elf" "Laboratorio3_22550_Boris_Lopez.hex"
+	"C:\Program Files\Microchip\xc8\v2.36\bin\avr-objcopy.exe" -j .eeprom --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0 --no-change-warnings -O ihex "Laboratorio3_22550_Boris_Lopez.elf" "Laboratorio3_22550_Boris_Lopez.eep" || exit 0
+	"C:\Program Files\Microchip\xc8\v2.36\bin\avr-objdump.exe" -h -S "Laboratorio3_22550_Boris_Lopez.elf" > "Laboratorio3_22550_Boris_Lopez.lss"
 	
 	
 
@@ -134,5 +147,5 @@ $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER
 clean:
 	-$(RM) $(OBJS_AS_ARGS) $(EXECUTABLES)  
 	-$(RM) $(C_DEPS_AS_ARGS)   
-	rm -rf "Laboratorio3_22550.elf" "Laboratorio3_22550.hex" "Laboratorio3_22550.eep" "Laboratorio3_22550.map" "Laboratorio3_22550.usersignatures" "Laboratorio3_22550.a"  "Laboratorio3_22550.lss"
+	rm -rf "Laboratorio3_22550_Boris_Lopez.elf" "Laboratorio3_22550_Boris_Lopez.hex" "Laboratorio3_22550_Boris_Lopez.eep" "Laboratorio3_22550_Boris_Lopez.map" "Laboratorio3_22550_Boris_Lopez.usersignatures" "Laboratorio3_22550_Boris_Lopez.a"  "Laboratorio3_22550_Boris_Lopez.lss"
 	

@@ -3,13 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Atmel Studio Solution File, Format Version 11.00
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Laboratorio3_22550", "Laboratorio3_22550\Laboratorio3_22550.cproj", "{2285C48D-296E-43FD-A7B6-69885F64CFFD}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{67A53D8A-E586-42D9-AD44-991C9D4EF3BB}"
-	ProjectSection(SolutionItems) = preProject
-		Laboratorio3_22550\ADC\ADC.c = Laboratorio3_22550\ADC\ADC.c
-		Laboratorio3_22550\ADC\ADC.h = Laboratorio3_22550\ADC\ADC.h
-	EndProjectSection
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Laboratorio3_22550_Boris_Lopez", "Laboratorio3_22550_Boris_Lopez\Laboratorio3_22550_Boris_Lopez.cproj", "{2285C48D-296E-43FD-A7B6-69885F64CFFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

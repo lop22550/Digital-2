@@ -11,9 +11,7 @@
 
 
 
-#define  F_CPU 16000000
 #include <avr/io.h>
-#include <avr/delay.h>
 
 void initADC(void);
 void ADC_LCD(int valor_ADC);

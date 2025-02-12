@@ -1,4 +1,4 @@
-main.d main.o: .././main.c \
+SPI/SPI.d SPI/SPI.o: ../SPI/SPI.c ../SPI/SPI.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\io.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\sfr_defs.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\inttypes.h \
@@ -11,14 +11,9 @@ main.d main.o: .././main.c \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\portpins.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\common.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\fuse.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\lock.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay_basic.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\interrupt.h \
- .././ADC/ADC.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\delay.h \
- .././UART9600/UART9600.h .././SPI/SPI.h
+ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\lock.h
+
+../SPI/SPI.h:
 
 c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\io.h:
 
@@ -45,19 +40,3 @@ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\common.h:
 c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\lock.h:
-
-c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:
-
-c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay_basic.h:
-
-c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h:
-
-c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\interrupt.h:
-
-.././ADC/ADC.h:
-
-c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\delay.h:
-
-.././UART9600/UART9600.h:
-
-.././SPI/SPI.h:
