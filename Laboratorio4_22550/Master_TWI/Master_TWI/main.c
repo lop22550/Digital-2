@@ -1,8 +1,10 @@
 /*
- * main.c
- *
- * Created: 2/13/2025 11:44:19 AM
- *  Author: bjosu
+ Universidad del Valle de Guatemala
+ // Electrónica Digital 2
+ // Archivo: Laboratorio 4
+ // Hardware: ATMega328p
+ // Autor: Adriana Marcela Gonzalez, Boris Josué López Moreira
+ // Carnet: 22438, 22550
  */ 
 #define F_CPU 16000000
 #include <avr/io.h>
