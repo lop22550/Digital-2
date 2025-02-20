@@ -36,14 +36,8 @@ int main(void)
 	cli();
 	
 	//Programación para MAESTRO
-	/*DDRC |= (1<<DDC0)|(1<<DDC1)|(1<<DDC2)|(1<<DDC3)|(1<<DDC4)|(1<<DDC5);
-	DDRD |= (1<<DDD2)|(1<<DDD3);
-	DDRB |= (1<<PORTB2);
-	PORTB |= (1<<PORTB2);
-	PORTC &= ~((1<<PORTC0)|(1<<PORTC1)|(1<<PORTC2)|(1<<PORTC3)|(1<<PORTC4)|(1<<PORTC5));
-	PORTD &= ~((1<<PORTD2)|(1<<PORTD3));*/
 	
-	//UCSR0B = 0;
+	
 	initADC();
 	initUART9600();
 	DDRD |= ((1<<DDD2)|(1<<DDD3)|(1<<DDD4)|(1<<DDD5)|(1<<DDD6)|(1<<DDD7));
@@ -68,8 +62,6 @@ int main(void)
 		//PORTB |= (1<<PORTB2);    //SLAVE SELECT
 
 		 _delay_ms(100);  // Delay para observar los LEDs
-		
-	     //ConvertADC(spiValor);
 	
 
     }
