@@ -50,6 +50,7 @@ int main(void)
 	
 	sei();
 	 ADCSRA |= (1 << ADSC);
+	 
     while(1)
     {
 		
