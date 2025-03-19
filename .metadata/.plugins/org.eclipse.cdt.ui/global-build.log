@@ -1,407 +1,92 @@
-15:47:31 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-   9340	     16	   1648	  11004	   2afc	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-15:47:50 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-   9340	     16	   1648	  11004	   2afc	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-15:47:59 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-   9340	     16	   1648	  11004	   2afc	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-15:49:11 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
+18:31:58 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
 ../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
   108 |           refreshPort();
       |           ^~~~~~~~~~~
+../Core/Src/main.c:109:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
+  109 |           Ganador_indicador();
+      |           ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:111:32: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
+  111 |           if (Ganador_J1 == 1){_7seg_output(1);}
+      |                                ^~~~~~~~~~~~
 ../Core/Src/main.c: At top level:
-../Core/Src/main.c:300:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  300 | void refreshPort(void){
+../Core/Src/main.c:306:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
+  306 | void refreshPort(void){
       |      ^~~~~~~~~~~
 ../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
   108 |           refreshPort();
       |           ^~~~~~~~~~~
+../Core/Src/main.c:398:6: warning: conflicting types for '_7seg_output'; have 'void(uint16_t)' {aka 'void(short unsigned int)'}
+  398 | void _7seg_output(uint16_t numero){
+      |      ^~~~~~~~~~~~
+../Core/Src/main.c:111:32: note: previous implicit declaration of '_7seg_output' with type 'void(uint16_t)' {aka 'void(short unsigned int)'}
+  111 |           if (Ganador_J1 == 1){_7seg_output(1);}
+      |                                ^~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
+  428 | void Ganador_indicador (void){
+      |      ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:109:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
+  109 |           Ganador_indicador();
+      |           ^~~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Laboratorio 5.elf
  
 arm-none-eabi-size  Laboratorio\ 5.elf 
 arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
    text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
+   9920	     12	   1652	  11584	   2d40	Laboratorio 5.elf
 Finished building: default.size.stdout
  
 Finished building: Laboratorio 5.list
  
-15:50:12 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
+18:32:08 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
+make -j8 all 
+arm-none-eabi-size  Laboratorio\ 5.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9920	     12	   1652	  11584	   2d40	Laboratorio 5.elf
+Finished building: default.size.stdout
+ 
+18:33:51 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
 ../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
   108 |           refreshPort();
       |           ^~~~~~~~~~~
+../Core/Src/main.c:109:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
+  109 |           Ganador_indicador();
+      |           ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:111:32: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
+  111 |           if (Ganador_J1 == 1){_7seg_output(1);}
+      |                                ^~~~~~~~~~~~
 ../Core/Src/main.c: At top level:
-../Core/Src/main.c:300:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  300 | void refreshPort(void){
+../Core/Src/main.c:306:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
+  306 | void refreshPort(void){
       |      ^~~~~~~~~~~
 ../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
   108 |           refreshPort();
       |           ^~~~~~~~~~~
+../Core/Src/main.c:398:6: warning: conflicting types for '_7seg_output'; have 'void(uint16_t)' {aka 'void(short unsigned int)'}
+  398 | void _7seg_output(uint16_t numero){
+      |      ^~~~~~~~~~~~
+../Core/Src/main.c:111:32: note: previous implicit declaration of '_7seg_output' with type 'void(uint16_t)' {aka 'void(short unsigned int)'}
+  111 |           if (Ganador_J1 == 1){_7seg_output(1);}
+      |                                ^~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
+  428 | void Ganador_indicador (void){
+      |      ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:109:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
+  109 |           Ganador_indicador();
+      |           ^~~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Laboratorio 5.elf
  
 arm-none-eabi-size  Laboratorio\ 5.elf 
 arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
    text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-15:50:46 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:300:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  300 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-15:50:48 **** Incremental Build of configuration Debug for project prueba ****
-make -j8 all 
-arm-none-eabi-size  prueba.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8468	     12	   1644	  10124	   278c	prueba.elf
-Finished building: default.size.stdout
- 
-15:51:28 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:300:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  300 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-15:51:30 **** Incremental Build of configuration Debug for project prueba ****
-make -j8 all 
-arm-none-eabi-size  prueba.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8468	     12	   1644	  10124	   278c	prueba.elf
-Finished building: default.size.stdout
- 
-15:51:45 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-15:51:46 **** Incremental Build of configuration Debug for project prueba ****
-make -j8 all 
-arm-none-eabi-size  prueba.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8468	     12	   1644	  10124	   278c	prueba.elf
-Finished building: default.size.stdout
- 
-15:52:00 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-15:52:27 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:300:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  300 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-15:52:53 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:300:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  300 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-15:52:54 **** Incremental Build of configuration Debug for project prueba ****
-make -j8 all 
-arm-none-eabi-size  prueba.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8468	     12	   1644	  10124	   278c	prueba.elf
-Finished building: default.size.stdout
- 
-15:53:04 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-15:53:04 **** Incremental Build of configuration Debug for project prueba ****
-make -j8 all 
-arm-none-eabi-size  prueba.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8468	     12	   1644	  10124	   278c	prueba.elf
-Finished building: default.size.stdout
- 
-15:53:18 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-15:53:19 **** Incremental Build of configuration Debug for project prueba ****
-make -j8 all 
-arm-none-eabi-size  prueba.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8468	     12	   1644	  10124	   278c	prueba.elf
-Finished building: default.size.stdout
- 
-15:54:22 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-15:54:23 **** Incremental Build of configuration Debug for project prueba ****
-make -j8 all 
-arm-none-eabi-size  prueba.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8468	     12	   1644	  10124	   278c	prueba.elf
-Finished building: default.size.stdout
- 
-15:54:30 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:300:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  300 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-15:54:32 **** Incremental Build of configuration Debug for project prueba ****
-make -j8 all 
-arm-none-eabi-size  prueba.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8468	     12	   1644	  10124	   278c	prueba.elf
-Finished building: default.size.stdout
- 
-15:55:08 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-15:55:24 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-15:55:31 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-   9296	     16	   1648	  10960	   2ad0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-15:57:31 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:300:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  300 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-   9340	     12	   1644	  10996	   2af4	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-16:07:30 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:109:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  109 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:301:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  301 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  109 |           refreshPort();
-      |           ^~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-   9312	     12	   1644	  10968	   2ad8	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-16:09:03 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:109:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  109 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:301:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  301 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  109 |           refreshPort();
-      |           ^~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-   9312	     12	   1644	  10968	   2ad8	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-16:49:02 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:109:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  109 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:301:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  301 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  109 |           refreshPort();
-      |           ^~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-   9224	     12	   1644	  10880	   2a80	Laboratorio 5.elf
+   9948	     12	   1652	  11612	   2d5c	Laboratorio 5.elf
 Finished building: default.size.stdout
  
 Finished building: Laboratorio 5.list

@@ -1,28 +1,46 @@
-16:49:02 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
+18:33:51 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:109:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  109 |           refreshPort();
+../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
+  108 |           refreshPort();
       |           ^~~~~~~~~~~
+../Core/Src/main.c:109:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
+  109 |           Ganador_indicador();
+      |           ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:111:32: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
+  111 |           if (Ganador_J1 == 1){_7seg_output(1);}
+      |                                ^~~~~~~~~~~~
 ../Core/Src/main.c: At top level:
-../Core/Src/main.c:301:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  301 | void refreshPort(void){
+../Core/Src/main.c:306:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
+  306 | void refreshPort(void){
       |      ^~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  109 |           refreshPort();
+../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
+  108 |           refreshPort();
       |           ^~~~~~~~~~~
+../Core/Src/main.c:398:6: warning: conflicting types for '_7seg_output'; have 'void(uint16_t)' {aka 'void(short unsigned int)'}
+  398 | void _7seg_output(uint16_t numero){
+      |      ^~~~~~~~~~~~
+../Core/Src/main.c:111:32: note: previous implicit declaration of '_7seg_output' with type 'void(uint16_t)' {aka 'void(short unsigned int)'}
+  111 |           if (Ganador_J1 == 1){_7seg_output(1);}
+      |                                ^~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
+  428 | void Ganador_indicador (void){
+      |      ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:109:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
+  109 |           Ganador_indicador();
+      |           ^~~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Laboratorio 5.elf
  
 arm-none-eabi-size  Laboratorio\ 5.elf 
 arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
    text	   data	    bss	    dec	    hex	filename
-   9224	     12	   1644	  10880	   2a80	Laboratorio 5.elf
+   9948	     12	   1652	  11612	   2d5c	Laboratorio 5.elf
 Finished building: default.size.stdout
  
 Finished building: Laboratorio 5.list
  
 
-16:49:04 Build Finished. 0 errors, 2 warnings. (took 1s.568ms)
+18:33:53 Build Finished. 0 errors, 6 warnings. (took 1s.822ms)
 

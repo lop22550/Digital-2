@@ -1400,3 +1400,48 @@ java.lang.NullPointerException: Cannot invoke "javax.swing.JTextField.getText()"
 2025-03-18 15:45:17,987 [INFO] WebApp:194 - Connection lost
 2025-03-18 15:45:18,188 [INFO] WebApp:191 - Connection restablished
 2025-03-18 15:54:40,039 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2025-03-18 17:42:47,237 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 377523712 Bytes (673185792)
+2025-03-18 17:42:50,018 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 407940424 Bytes (673185792)
+2025-03-18 17:42:53,545 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 573622320 Bytes (673185792)
+2025-03-18 17:42:55,006 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-03-18 17:42:55,007 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-03-18 17:42:55,008 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-03-18 17:42:55,008 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-03-18 17:42:55,010 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-03-18 17:42:55,015 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-03-18 17:42:55,369 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\MXTmpFiles\license.tmp_save
+2025-03-18 17:42:56,176 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\MXTmpFiles\license.tmp
+2025-03-18 17:42:56,343 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\MXTmpFiles\gpio.tmp_save
+2025-03-18 17:42:56,651 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\MXTmpFiles\gpio.tmp
+2025-03-18 17:42:56,867 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\Core\Src\stm32f4xx_it.c_save
+2025-03-18 17:42:57,176 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\Core\Src\stm32f4xx_it.c
+2025-03-18 17:42:57,191 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\Core\Inc\stm32f4xx_it.h_save
+2025-03-18 17:42:57,379 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\Core\Inc\stm32f4xx_it.h
+2025-03-18 17:42:57,428 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\Core\Src\stm32f4xx_hal_msp.c_save
+2025-03-18 17:42:57,707 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\Core\Src\stm32f4xx_hal_msp.c
+2025-03-18 17:42:57,718 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\MXTmpFiles\system.tmp_save
+2025-03-18 17:42:57,895 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\MXTmpFiles\system.tmp
+2025-03-18 17:42:57,926 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\Core\Inc\stm32f4xx_hal_conf.h_save
+2025-03-18 17:42:58,099 [INFO] CodeEngine:343 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\Core\Inc\stm32f4xx_hal_conf.h
+2025-03-18 17:42:58,162 [WARN] IPConfigManager:3174 - Warning: the RefConfig PLL2P_FOR_MCO is not available in your config.xml file
+2025-03-18 17:42:58,180 [INFO] ApiDbMcu:508 - Load IP Config File for USART2
+2025-03-18 17:42:58,191 [INFO] ApiDbMcu:508 - Load IP Config File for RCC
+2025-03-18 17:42:58,227 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\Core\Inc\main.h_save
+2025-03-18 17:42:58,449 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\Core\Inc\main.h
+2025-03-18 17:42:58,490 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\Core\Src\main.c_save
+2025-03-18 17:42:59,008 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\Core\Src\main.c
+2025-03-18 17:43:00,007 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 443mS.
+2025-03-18 17:43:00,023 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-03-18 17:43:00,226 [INFO] ConfigFileManager:1590 - The Die is : DIE421
+2025-03-18 17:43:00,258 [INFO] ApiDbMcu:508 - Load IP Config File for FATFS
+2025-03-18 17:43:00,269 [INFO] ApiDbMcu:508 - Load IP Config File for FREERTOS
+2025-03-18 17:43:00,274 [INFO] ApiDbMcu:508 - Load IP Config File for LIBJPEG
+2025-03-18 17:43:00,288 [INFO] ApiDbMcu:508 - Load IP Config File for MBEDTLS
+2025-03-18 17:43:00,307 [INFO] ApiDbMcu:508 - Load IP Config File for USB_DEVICE
+2025-03-18 17:43:00,314 [INFO] ApiDbMcu:508 - Load IP Config File for USB_HOST
+2025-03-18 17:43:01,107 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2025-03-18 17:43:04,776 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 4752mS.
+2025-03-18 17:43:04,780 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 2mS.
+2025-03-18 17:43:04,788 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-03-18 17:43:19,551 [INFO] Gpio:277 - dependency for GPIO [RCC, USART2]
+2025-03-18 18:35:01,429 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 

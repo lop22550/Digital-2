@@ -46,8 +46,8 @@ UART_HandleTypeDef huart2;
 uint16_t estado = 0;        // Variable para guardar estado del juego.
 uint16_t contador_J1 = 0;   //
 uint16_t contador_J2 = 0;
-uint16_t Ganador = 0;       //Guarda un número para indicar el ganador.
-
+uint16_t Ganador_J1 = 0;       //Guarda un número para indicar el ganador.
+uint16_t Ganador_J2 = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -77,8 +77,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-
-	HAL_Init();
+  HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -107,8 +106,13 @@ int main(void)
 	  //HAL_GPIO_WritePin(J1_L1_GPIO_Port, J1_L1_Pin, SET);
 
 	  refreshPort();
+	  Ganador_indicador();
 
-	  HAL_Delay(1000);
+	  if (Ganador_J1 == 1){_7seg_output(1);}
+	  else if (Ganador_J2 == 1) {_7seg_output(2);}
+	  else {_7seg_output(0);}
+
+	  HAL_Delay(50);
 
     /* USER CODE END WHILE */
 
@@ -216,36 +220,36 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, J2_L2_Pin|J2_L3_Pin|J2_L4_Pin|_7seg_c_Pin
-                          |_7seg_b_Pin|_7seg_a_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, J2_L2_Pin|J2_L3_Pin|J2_L4_Pin|_7seg_g_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, J1_L2_Pin|J1_L3_Pin|J1_L4_Pin|LD2_Pin
-                          |_7seg_e_Pin|_7seg_d_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, J1_L2_Pin|J1_L3_Pin|J1_L4_Pin|_7seg_c_Pin
+                          |_7seg_d_Pin|_7seg_e_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, J2_L1_Pin|_7seg_g_Pin|_7seg_f_Pin|J1_L1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, J2_L1_Pin|_7seg_f_Pin|J1_L1_Pin|_7seg_a_Pin
+                          |_7seg_b_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : J2_L2_Pin J2_L3_Pin J2_L4_Pin _7seg_c_Pin
-                           _7seg_b_Pin _7seg_a_Pin */
-  GPIO_InitStruct.Pin = J2_L2_Pin|J2_L3_Pin|J2_L4_Pin|_7seg_c_Pin
-                          |_7seg_b_Pin|_7seg_a_Pin;
+  /*Configure GPIO pins : J2_L2_Pin J2_L3_Pin J2_L4_Pin _7seg_g_Pin */
+  GPIO_InitStruct.Pin = J2_L2_Pin|J2_L3_Pin|J2_L4_Pin|_7seg_g_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : J1_L2_Pin J1_L3_Pin J1_L4_Pin LD2_Pin
-                           _7seg_e_Pin _7seg_d_Pin */
-  GPIO_InitStruct.Pin = J1_L2_Pin|J1_L3_Pin|J1_L4_Pin|LD2_Pin
-                          |_7seg_e_Pin|_7seg_d_Pin;
+  /*Configure GPIO pins : J1_L2_Pin J1_L3_Pin J1_L4_Pin _7seg_c_Pin
+                           _7seg_d_Pin _7seg_e_Pin */
+  GPIO_InitStruct.Pin = J1_L2_Pin|J1_L3_Pin|J1_L4_Pin|_7seg_c_Pin
+                          |_7seg_d_Pin|_7seg_e_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : J2_L1_Pin _7seg_g_Pin _7seg_f_Pin J1_L1_Pin */
-  GPIO_InitStruct.Pin = J2_L1_Pin|_7seg_g_Pin|_7seg_f_Pin|J1_L1_Pin;
+  /*Configure GPIO pins : J2_L1_Pin _7seg_f_Pin J1_L1_Pin _7seg_a_Pin
+                           _7seg_b_Pin */
+  GPIO_InitStruct.Pin = J2_L1_Pin|_7seg_f_Pin|J1_L1_Pin|_7seg_a_Pin
+                          |_7seg_b_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -279,20 +283,21 @@ static void MX_GPIO_Init(void)
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
 	if(GPIO_Pin == Start_Pin){
-				estado = 1;
+				estado++;
+				if (estado > 1 ){estado = 0; Ganador_J1 = 0; Ganador_J2 = 0;}
 			}
 	if(GPIO_Pin == J1_Pin){
-		//if (estado == 1){
+		if (estado == 1){
 		contador_J1++;
-		if (contador_J1 >4){contador_J1 = 0; estado = 0;}
-		//}
+		if (contador_J1 >4){contador_J1 = 0; contador_J2 = 0; estado = 0;}
+		}
 	}
 
 	if(GPIO_Pin == J2_Pin){
-		//if (estado == 1){
-			//contador_J2++;
-			//if (contador_J2 >4){contador_J2 = 0; estado = 0;}
-		//}
+		if (estado == 1){
+			contador_J2++;
+			if (contador_J2 >4){contador_J1 = 0; contador_J2 = 0; estado = 0;}
+		}
 	}
 
 
@@ -300,51 +305,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
 void refreshPort(void){
 	//if (contador == contador_J1){
-		/*if (contador_J1 == 1){
-			HAL_GPIO_WritePin(J1_L1_GPIO_Port, J1_L1_Pin, SET);
-			HAL_GPIO_WritePin(J1_L2_GPIO_Port, J1_L2_Pin, RESET);
-			HAL_GPIO_WritePin(J1_L3_GPIO_Port, J1_L3_Pin, RESET);
-			HAL_GPIO_WritePin(J1_L4_GPIO_Port, J1_L4_Pin, RESET);
-		}else {
-			HAL_GPIO_WritePin(J1_L1_GPIO_Port, J1_L1_Pin, RESET);
-			HAL_GPIO_WritePin(J1_L2_GPIO_Port, J1_L2_Pin, RESET);
-			HAL_GPIO_WritePin(J1_L3_GPIO_Port, J1_L3_Pin, RESET);
-			HAL_GPIO_WritePin(J1_L4_GPIO_Port, J1_L4_Pin, RESET);
-		}
-
-		if (contador_J1 == 2){
-			HAL_GPIO_WritePin(J1_L1_GPIO_Port, J1_L1_Pin, SET);
-			HAL_GPIO_WritePin(J1_L2_GPIO_Port, J1_L2_Pin, SET);
-			HAL_GPIO_WritePin(J1_L3_GPIO_Port, J1_L3_Pin, RESET);
-			HAL_GPIO_WritePin(J1_L4_GPIO_Port, J1_L4_Pin, RESET);
-			}else {
-				HAL_GPIO_WritePin(J1_L1_GPIO_Port, J1_L1_Pin, RESET);
-				HAL_GPIO_WritePin(J1_L2_GPIO_Port, J1_L2_Pin, RESET);
-				HAL_GPIO_WritePin(J1_L3_GPIO_Port, J1_L3_Pin, RESET);
-				HAL_GPIO_WritePin(J1_L4_GPIO_Port, J1_L4_Pin, RESET);}
-
-		if (contador_J1 == 3){
-			HAL_GPIO_WritePin(J1_L1_GPIO_Port, J1_L1_Pin, SET);
-			HAL_GPIO_WritePin(J1_L2_GPIO_Port, J1_L2_Pin, SET);
-			HAL_GPIO_WritePin(J1_L3_GPIO_Port, J1_L3_Pin, SET);
-			HAL_GPIO_WritePin(J1_L4_GPIO_Port, J1_L4_Pin, RESET);
-			}else {
-				HAL_GPIO_WritePin(J1_L1_GPIO_Port, J1_L1_Pin, RESET);
-				HAL_GPIO_WritePin(J1_L2_GPIO_Port, J1_L2_Pin, RESET);
-				HAL_GPIO_WritePin(J1_L3_GPIO_Port, J1_L3_Pin, RESET);
-				HAL_GPIO_WritePin(J1_L4_GPIO_Port, J1_L4_Pin, RESET);}
-
-		if (contador_J1 == 4){
-			HAL_GPIO_WritePin(J1_L1_GPIO_Port, J1_L1_Pin, SET);
-			HAL_GPIO_WritePin(J1_L2_GPIO_Port, J1_L2_Pin, SET);
-			HAL_GPIO_WritePin(J1_L3_GPIO_Port, J1_L3_Pin, SET);
-			HAL_GPIO_WritePin(J1_L4_GPIO_Port, J1_L4_Pin, SET);
-			}else {
-				HAL_GPIO_WritePin(J1_L1_GPIO_Port, J1_L1_Pin, RESET);
-				HAL_GPIO_WritePin(J1_L2_GPIO_Port, J1_L2_Pin, RESET);
-				HAL_GPIO_WritePin(J1_L3_GPIO_Port, J1_L3_Pin, RESET);
-				HAL_GPIO_WritePin(J1_L4_GPIO_Port, J1_L4_Pin, RESET);}*/
-
 
 	switch (contador_J1){
 	case 1:
@@ -379,6 +339,40 @@ void refreshPort(void){
 
 	}
 
+
+	switch (contador_J2){
+		case 1:
+			HAL_GPIO_WritePin(J2_L1_GPIO_Port, J2_L1_Pin, SET);
+			HAL_GPIO_WritePin(J2_L2_GPIO_Port, J2_L2_Pin, RESET);
+			HAL_GPIO_WritePin(J2_L3_GPIO_Port, J2_L3_Pin, RESET);
+			HAL_GPIO_WritePin(J2_L4_GPIO_Port, J2_L4_Pin, RESET);
+			break;
+		case 2:
+			HAL_GPIO_WritePin(J2_L1_GPIO_Port, J2_L1_Pin, SET);
+			HAL_GPIO_WritePin(J2_L2_GPIO_Port, J2_L2_Pin, SET);
+	    	HAL_GPIO_WritePin(J2_L3_GPIO_Port, J2_L3_Pin, RESET);
+	    	HAL_GPIO_WritePin(J2_L4_GPIO_Port, J2_L4_Pin, RESET);
+	    	break;
+		case 3:
+			HAL_GPIO_WritePin(J2_L1_GPIO_Port, J2_L1_Pin, SET);
+			HAL_GPIO_WritePin(J2_L2_GPIO_Port, J2_L2_Pin, SET);
+			HAL_GPIO_WritePin(J2_L3_GPIO_Port, J2_L3_Pin, SET);
+			HAL_GPIO_WritePin(J2_L4_GPIO_Port, J2_L4_Pin, RESET);
+			break;
+		case 4:
+			HAL_GPIO_WritePin(J2_L1_GPIO_Port, J2_L1_Pin, SET);
+			HAL_GPIO_WritePin(J2_L2_GPIO_Port, J2_L2_Pin, SET);
+			HAL_GPIO_WritePin(J2_L3_GPIO_Port, J2_L3_Pin, SET);
+			HAL_GPIO_WritePin(J2_L4_GPIO_Port, J2_L4_Pin, SET);
+			break;
+		default:
+			HAL_GPIO_WritePin(J2_L1_GPIO_Port, J2_L1_Pin, RESET);
+			HAL_GPIO_WritePin(J2_L2_GPIO_Port, J2_L2_Pin, RESET);
+			HAL_GPIO_WritePin(J2_L3_GPIO_Port, J2_L3_Pin, RESET);
+			HAL_GPIO_WritePin(J2_L4_GPIO_Port, J2_L4_Pin, RESET);
+
+		}
+
 	/*}
 
 	if (contador == contador_J2){
@@ -402,7 +396,6 @@ void refreshPort(void){
 }
 
 void _7seg_output(uint16_t numero){
-	numero = Ganador;
 	switch (numero){
 		case 1:
 			HAL_GPIO_WritePin(_7seg_a_GPIO_Port, _7seg_a_Pin, RESET);
@@ -434,10 +427,11 @@ void _7seg_output(uint16_t numero){
 
 void Ganador_indicador (void){
 	if (contador_J1 == 4){
-		Ganador = 1;
+		Ganador_J1 = 1;
 	}
 	if (contador_J2 == 4){
-		Ganador = 2;
+		Ganador_J2 = 1;
+
 	}
 }
 
