@@ -103,16 +103,12 @@ int main(void)
   //HAL_GPIO_WritePin(J1_L1_GPIO_Port, J1_L1_Pin, SET);
   while (1)
   {
-	  //HAL_GPIO_WritePin(J1_L1_GPIO_Port, J1_L1_Pin, SET);
 
 	  refreshPort();
 	  Ganador_indicador();
+	  _7seg_output();
 
-	  if (Ganador_J1 == 1){_7seg_output(1);}
-	  else if (Ganador_J2 == 1) {_7seg_output(2);}
-	  else {_7seg_output(0);}
 
-	  HAL_Delay(50);
 
     /* USER CODE END WHILE */
 
@@ -373,30 +369,13 @@ void refreshPort(void){
 
 		}
 
-	/*}
 
-	if (contador == contador_J2){
-		if (contador_J2 == 1){
-			HAL_GPIO_WritePin(J2_L1_GPIO_Port, J2_L1_Pin, SET);
-			}else {HAL_GPIO_WritePin(J2_L1_GPIO_Port, J2_L1_Pin, RESET);}
 
-		if (contador_J2 == 2){
-			HAL_GPIO_WritePin(J2_L2_GPIO_Port, J2_L2_Pin, SET);
-			}else {HAL_GPIO_WritePin(J2_L2_GPIO_Port, J2_L2_Pin, RESET);}
-
-		if (contador_J2 == 3){
-			HAL_GPIO_WritePin(J2_L3_GPIO_Port, J2_L3_Pin, SET);
-			}else {HAL_GPIO_WritePin(J2_L3_GPIO_Port, J2_L3_Pin, RESET);}
-
-		if (contador_J2 == 4){
-			HAL_GPIO_WritePin(J2_L4_GPIO_Port, J2_L4_Pin, SET);
-			}else {HAL_GPIO_WritePin(J2_L4_GPIO_Port, J2_L4_Pin, RESET);}
-		}
-*/
 }
 
-void _7seg_output(uint16_t numero){
-	switch (numero){
+void _7seg_output(void){
+	if(Ganador_J1 == 1){
+	switch (Ganador_J1){
 		case 1:
 			HAL_GPIO_WritePin(_7seg_a_GPIO_Port, _7seg_a_Pin, RESET);
 			HAL_GPIO_WritePin(_7seg_b_GPIO_Port, _7seg_b_Pin, SET);
@@ -405,14 +384,14 @@ void _7seg_output(uint16_t numero){
 			HAL_GPIO_WritePin(_7seg_e_GPIO_Port, _7seg_e_Pin, RESET);
 			HAL_GPIO_WritePin(_7seg_f_GPIO_Port, _7seg_f_Pin, RESET);
 			HAL_GPIO_WritePin(_7seg_g_GPIO_Port, _7seg_g_Pin, RESET);
-		case 2:
+		/*case 2:
 			HAL_GPIO_WritePin(_7seg_a_GPIO_Port, _7seg_a_Pin, SET);
 			HAL_GPIO_WritePin(_7seg_b_GPIO_Port, _7seg_b_Pin, SET);
 			HAL_GPIO_WritePin(_7seg_c_GPIO_Port, _7seg_c_Pin, RESET);
 			HAL_GPIO_WritePin(_7seg_d_GPIO_Port, _7seg_d_Pin, SET);
 			HAL_GPIO_WritePin(_7seg_e_GPIO_Port, _7seg_e_Pin, SET);
 			HAL_GPIO_WritePin(_7seg_f_GPIO_Port, _7seg_f_Pin, RESET);
-			HAL_GPIO_WritePin(_7seg_g_GPIO_Port, _7seg_g_Pin, SET);
+			HAL_GPIO_WritePin(_7seg_g_GPIO_Port, _7seg_g_Pin, SET);*/
 		default:
 			HAL_GPIO_WritePin(_7seg_a_GPIO_Port, _7seg_a_Pin, RESET);
 			HAL_GPIO_WritePin(_7seg_b_GPIO_Port, _7seg_b_Pin, RESET);
@@ -421,18 +400,49 @@ void _7seg_output(uint16_t numero){
 			HAL_GPIO_WritePin(_7seg_e_GPIO_Port, _7seg_e_Pin, RESET);
 			HAL_GPIO_WritePin(_7seg_f_GPIO_Port, _7seg_f_Pin, RESET);
 			HAL_GPIO_WritePin(_7seg_g_GPIO_Port, _7seg_g_Pin, RESET);
+	} //Fin del switch case
+	}//Fin del if
 
-	}
+	if(Ganador_J2 == 2){
+		switch (Ganador_J2){
+			/*case 1:
+				HAL_GPIO_WritePin(_7seg_a_GPIO_Port, _7seg_a_Pin, RESET);
+				HAL_GPIO_WritePin(_7seg_b_GPIO_Port, _7seg_b_Pin, SET);
+				HAL_GPIO_WritePin(_7seg_c_GPIO_Port, _7seg_c_Pin, SET);
+				HAL_GPIO_WritePin(_7seg_d_GPIO_Port, _7seg_d_Pin, RESET);
+				HAL_GPIO_WritePin(_7seg_e_GPIO_Port, _7seg_e_Pin, RESET);
+				HAL_GPIO_WritePin(_7seg_f_GPIO_Port, _7seg_f_Pin, RESET);
+				HAL_GPIO_WritePin(_7seg_g_GPIO_Port, _7seg_g_Pin, RESET);*/
+			case 2:
+				HAL_GPIO_WritePin(_7seg_a_GPIO_Port, _7seg_a_Pin, SET);
+				HAL_GPIO_WritePin(_7seg_b_GPIO_Port, _7seg_b_Pin, SET);
+				HAL_GPIO_WritePin(_7seg_c_GPIO_Port, _7seg_c_Pin, RESET);
+				HAL_GPIO_WritePin(_7seg_d_GPIO_Port, _7seg_d_Pin, SET);
+				HAL_GPIO_WritePin(_7seg_e_GPIO_Port, _7seg_e_Pin, SET);
+				HAL_GPIO_WritePin(_7seg_f_GPIO_Port, _7seg_f_Pin, RESET);
+				HAL_GPIO_WritePin(_7seg_g_GPIO_Port, _7seg_g_Pin, SET);
+			default:
+				HAL_GPIO_WritePin(_7seg_a_GPIO_Port, _7seg_a_Pin, RESET);
+				HAL_GPIO_WritePin(_7seg_b_GPIO_Port, _7seg_b_Pin, RESET);
+				HAL_GPIO_WritePin(_7seg_c_GPIO_Port, _7seg_c_Pin, RESET);
+				HAL_GPIO_WritePin(_7seg_d_GPIO_Port, _7seg_d_Pin, RESET);
+				HAL_GPIO_WritePin(_7seg_e_GPIO_Port, _7seg_e_Pin, RESET);
+				HAL_GPIO_WritePin(_7seg_f_GPIO_Port, _7seg_f_Pin, RESET);
+				HAL_GPIO_WritePin(_7seg_g_GPIO_Port, _7seg_g_Pin, RESET);
+		}//Fin del switch case
+		}//Fin del if
+
+
 }
 
 void Ganador_indicador (void){
 	if (contador_J1 == 4){
 		Ganador_J1 = 1;
-	}
-	if (contador_J2 == 4){
-		Ganador_J2 = 1;
+	} else {Ganador_J1 = 0;}
 
-	}
+	if (contador_J2 == 4){
+		Ganador_J2 = 2;
+	} else {Ganador_J2 = 0;}
 }
 
 /* USER CODE END 4 */
