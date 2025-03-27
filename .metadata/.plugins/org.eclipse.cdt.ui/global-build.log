@@ -1,444 +1,1377 @@
-18:31:58 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
+23:35:49 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:109:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:111:32: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
-  111 |           if (Ganador_J1 == 1){_7seg_output(1);}
-      |                                ^~~~~~~~~~~~
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
 ../Core/Src/main.c: At top level:
-../Core/Src/main.c:306:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  306 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:398:6: warning: conflicting types for '_7seg_output'; have 'void(uint16_t)' {aka 'void(short unsigned int)'}
-  398 | void _7seg_output(uint16_t numero){
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:111:32: note: previous implicit declaration of '_7seg_output' with type 'void(uint16_t)' {aka 'void(short unsigned int)'}
-  111 |           if (Ganador_J1 == 1){_7seg_output(1);}
-      |                                ^~~~~~~~~~~~
-../Core/Src/main.c:428:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
-  428 | void Ganador_indicador (void){
-      |      ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-   9920	     12	   1652	  11584	   2d40	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-18:32:08 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:36:00 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
 make -j8 all 
 arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-   9920	     12	   1652	  11584	   2d40	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-18:33:51 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:109:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:111:32: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
-  111 |           if (Ganador_J1 == 1){_7seg_output(1);}
-      |                                ^~~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:306:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  306 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:398:6: warning: conflicting types for '_7seg_output'; have 'void(uint16_t)' {aka 'void(short unsigned int)'}
-  398 | void _7seg_output(uint16_t numero){
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:111:32: note: previous implicit declaration of '_7seg_output' with type 'void(uint16_t)' {aka 'void(short unsigned int)'}
-  111 |           if (Ganador_J1 == 1){_7seg_output(1);}
-      |                                ^~~~~~~~~~~~
-../Core/Src/main.c:428:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
-  428 | void Ganador_indicador (void){
-      |      ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-   9948	     12	   1652	  11612	   2d5c	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-03:52:05 **** Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:109:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:111:32: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
-  111 |           if (Ganador_J1 == 1){_7seg_output(1); HAL_Delay(1000); _7seg_output(0);}
-      |                                ^~~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:306:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  306 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:398:6: warning: conflicting types for '_7seg_output'; have 'void(uint16_t)' {aka 'void(short unsigned int)'}
-  398 | void _7seg_output(uint16_t numero){
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:111:32: note: previous implicit declaration of '_7seg_output' with type 'void(uint16_t)' {aka 'void(short unsigned int)'}
-  111 |           if (Ganador_J1 == 1){_7seg_output(1); HAL_Delay(1000); _7seg_output(0);}
-      |                                ^~~~~~~~~~~~
-../Core/Src/main.c:428:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
-  428 | void Ganador_indicador (void){
-      |      ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-   9976	     12	   1652	  11640	   2d78	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-04:00:02 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:109:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:110:11: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
-  110 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:307:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  307 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:399:6: warning: conflicting types for '_7seg_output'; have 'void(void)'
-  399 | void _7seg_output(void){
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:110:11: note: previous implicit declaration of '_7seg_output' with type 'void(void)'
-  110 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c:461:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
-  461 | void Ganador_indicador (void){
-      |      ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-  10160	     12	   1652	  11824	   2e30	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-04:00:19 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-   text	   data	    bss	    dec	    hex	filename
-  10160	     12	   1652	  11824	   2e30	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-04:02:24 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:109:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:111:11: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
-  111 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:308:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  308 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:400:6: warning: conflicting types for '_7seg_output'; have 'void(void)'
-  400 | void _7seg_output(void){
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:111:11: note: previous implicit declaration of '_7seg_output' with type 'void(void)'
-  111 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c:462:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
-  462 | void Ganador_indicador (void){
-      |      ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-  10184	     12	   1652	  11848	   2e48	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-04:04:26 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:109:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:110:11: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
-  110 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:307:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  307 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:399:6: warning: conflicting types for '_7seg_output'; have 'void(void)'
-  399 | void _7seg_output(void){
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:110:11: note: previous implicit declaration of '_7seg_output' with type 'void(void)'
-  110 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c:461:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
-  461 | void Ganador_indicador (void){
-      |      ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-  10176	     12	   1652	  11840	   2e40	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-04:06:45 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:109:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:110:11: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
-  110 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:306:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  306 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  108 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:398:6: warning: conflicting types for '_7seg_output'; have 'void(void)'
-  398 | void _7seg_output(void){
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:110:11: note: previous implicit declaration of '_7seg_output' with type 'void(void)'
-  110 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c:460:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
-  460 | void Ganador_indicador (void){
-      |      ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
-  109 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-  10096	     12	   1652	  11760	   2df0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-04:12:54 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:107:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  107 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
-  108 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:109:11: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
-  109 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:302:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  302 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:107:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  107 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:394:6: warning: conflicting types for '_7seg_output'; have 'void(void)'
-  394 | void _7seg_output(void){
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of '_7seg_output' with type 'void(void)'
-  109 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c:456:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
-  456 | void Ganador_indicador (void){
-      |      ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
-  108 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-  10096	     12	   1652	  11760	   2df0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-04:15:40 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:107:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  107 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
-  108 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:109:11: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
-  109 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:302:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  302 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:107:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  107 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:376:6: warning: conflicting types for '_7seg_output'; have 'void(void)'
-  376 | void _7seg_output(void){
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of '_7seg_output' with type 'void(void)'
-  109 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c:438:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
-  438 | void Ganador_indicador (void){
-      |      ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
-  108 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
-   text	   data	    bss	    dec	    hex	filename
-  10096	     12	   1652	  11760	   2df0	Laboratorio 5.elf
-Finished building: default.size.stdout
- 
-Finished building: Laboratorio 5.list
- 
-04:16:35 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:107:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  107 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
-  108 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:109:11: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
-  109 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:302:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  302 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:107:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  107 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:376:6: warning: conflicting types for '_7seg_output'; have 'void(void)'
-  376 | void _7seg_output(void){
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of '_7seg_output' with type 'void(void)'
-  109 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c:438:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
-  438 | void Ganador_indicador (void){
-      |      ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
-  108 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
-arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
    text	   data	    bss	    dec	    hex	filename
    9936	     12	   1652	  11600	   2d50	Laboratorio 5.elf
 Finished building: default.size.stdout
  
-Finished building: Laboratorio 5.list
+23:36:03 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:36:05 **** Incremental Build of configuration Debug for project prueba ****
+make -j8 all 
+arm-none-eabi-size  prueba.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8468	     12	   1644	  10124	   278c	prueba.elf
+Finished building: default.size.stdout
+ 
+23:36:17 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:37:30 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:38:59 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:39:20 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:39:30 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:42:27 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
+make -j8 all 
+arm-none-eabi-size  Laboratorio\ 5.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9936	     12	   1652	  11600	   2d50	Laboratorio 5.elf
+Finished building: default.size.stdout
+ 
+23:42:28 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:42:30 **** Incremental Build of configuration Debug for project prueba ****
+make -j8 all 
+arm-none-eabi-size  prueba.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8468	     12	   1644	  10124	   278c	prueba.elf
+Finished building: default.size.stdout
+ 
+23:42:39 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:42:55 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:45:36 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:10:53 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
+make -j8 all 
+arm-none-eabi-size  Laboratorio\ 5.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9936	     12	   1652	  11600	   2d50	Laboratorio 5.elf
+Finished building: default.size.stdout
+ 
+23:50:49 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:50:59 **** Incremental Build of configuration Debug for project prueba ****
+make -j8 all 
+arm-none-eabi-size  prueba.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8468	     12	   1644	  10124	   278c	prueba.elf
+Finished building: default.size.stdout
+ 
+23:51:21 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+00:05:12 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+00:07:18 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:13: error: invalid storage class for function 'MX_ADC1_Init'
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:344:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_DMA_Init'
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_GPIO_Init'
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:73:13: warning: 'MX_GPIO_Init' used but never defined
+   73 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:74:13: warning: 'MX_DMA_Init' used but never defined
+   74 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:75:13: warning: 'MX_USART2_UART_Init' used but never defined
+   75 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:76:13: warning: 'MX_ADC1_Init' used but never defined
+   76 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:77:13: warning: 'MX_USART3_UART_Init' used but never defined
+   77 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:433:6: warning: 'HAL_UART_RxCpltCallback' defined but not used [-Wunused-function]
+  433 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:6: warning: 'HAL_ADC_ConvCpltCallback' defined but not used [-Wunused-function]
+  428 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  393 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  375 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:344:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  344 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  311 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  249 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:201:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  201 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+00:07:59 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:195:1: error: expected identifier or '(' before '}' token
+  195 | }
+      | ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+00:08:57 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Laboratorio 6.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 6\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Laboratorio 6.elf
+ 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+arm-none-eabi-objdump -h -S Laboratorio\ 6.elf  > "Laboratorio 6.list"
+   text	   data	    bss	    dec	    hex	filename
+  17864	     12	   1924	  19800	   4d58	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+Finished building: Laboratorio 6.list
+ 
+00:24:40 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17864	     12	   1924	  19800	   4d58	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+00:24:56 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17864	     12	   1924	  19800	   4d58	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+00:25:01 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17864	     12	   1924	  19800	   4d58	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+00:25:49 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Laboratorio 6.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 6\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Laboratorio 6.elf
+ 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+arm-none-eabi-objdump -h -S Laboratorio\ 6.elf  > "Laboratorio 6.list"
+   text	   data	    bss	    dec	    hex	filename
+  17904	     12	   1924	  19840	   4d80	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+Finished building: Laboratorio 6.list
+ 
+00:38:49 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Laboratorio 6.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 6\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Laboratorio 6.elf
+ 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+arm-none-eabi-objdump -h -S Laboratorio\ 6.elf  > "Laboratorio 6.list"
+   text	   data	    bss	    dec	    hex	filename
+  18016	     12	   1924	  19952	   4df0	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+Finished building: Laboratorio 6.list
+ 
+05:34:15 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18016	     12	   1924	  19952	   4df0	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+05:37:11 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Laboratorio 6.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 6\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Laboratorio 6.elf
+ 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+arm-none-eabi-objdump -h -S Laboratorio\ 6.elf  > "Laboratorio 6.list"
+   text	   data	    bss	    dec	    hex	filename
+  17992	     12	   1924	  19928	   4dd8	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+Finished building: Laboratorio 6.list
+ 
+05:44:55 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Laboratorio 6.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 6\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Laboratorio 6.elf
+ 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+arm-none-eabi-objdump -h -S Laboratorio\ 6.elf  > "Laboratorio 6.list"
+   text	   data	    bss	    dec	    hex	filename
+  18056	     12	   1924	  19992	   4e18	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+Finished building: Laboratorio 6.list
+ 
+05:52:27 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Laboratorio 6.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 6\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Laboratorio 6.elf
+ 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+arm-none-eabi-objdump -h -S Laboratorio\ 6.elf  > "Laboratorio 6.list"
+   text	   data	    bss	    dec	    hex	filename
+  18024	     16	   1920	  19960	   4df8	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+Finished building: Laboratorio 6.list
+ 
+06:02:06 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Laboratorio 6.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 6\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Laboratorio 6.elf
+ 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+arm-none-eabi-objdump -h -S Laboratorio\ 6.elf  > "Laboratorio 6.list"
+   text	   data	    bss	    dec	    hex	filename
+  22172	    108	   2260	  24540	   5fdc	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+Finished building: Laboratorio 6.list
+ 
+06:03:46 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:224:12: error: too few arguments to function 'sprintf'
+  224 |            sprintf("Control 1");
+      |            ^~~~~~~
+In file included from ../Core/Src/main.c:24:
+C:\ST\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344\tools\bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/stdio.h:250:9: note: declared here
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |         ^~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+06:04:11 **** Build of configuration Debug for project Lab6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f446retx.d" -MT"Core/Startup/startup_stm32f446retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f446retx.o" "../Core/Startup/startup_stm32f446retx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc -o "Lab6.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Lab6\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab6.elf
+ 
+arm-none-eabi-size  Lab6.elf 
+arm-none-eabi-objdump -h -S Lab6.elf  > "Lab6.list"
+   text	   data	    bss	    dec	    hex	filename
+  15304	     12	   1884	  17200	   4330	Lab6.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab6.list
+ 
+06:04:19 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
+make -j8 all 
+arm-none-eabi-size  Laboratorio\ 5.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9936	     12	   1652	  11600	   2d50	Laboratorio 5.elf
+Finished building: default.size.stdout
+ 
+06:04:20 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Laboratorio 6.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 6\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Laboratorio 6.elf
+ 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+arm-none-eabi-objdump -h -S Laboratorio\ 6.elf  > "Laboratorio 6.list"
+   text	   data	    bss	    dec	    hex	filename
+  23140	    108	   2260	  25508	   63a4	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+Finished building: Laboratorio 6.list
+ 
+06:04:23 **** Incremental Build of configuration Debug for project prueba ****
+make -j8 all 
+arm-none-eabi-size  prueba.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8468	     12	   1644	  10124	   278c	prueba.elf
+Finished building: default.size.stdout
+ 
+06:04:30 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23140	    108	   2260	  25508	   63a4	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+06:08:59 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Laboratorio 6.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 6\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Laboratorio 6.elf
+ 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+arm-none-eabi-objdump -h -S Laboratorio\ 6.elf  > "Laboratorio 6.list"
+   text	   data	    bss	    dec	    hex	filename
+  23140	    108	   2260	  25508	   63a4	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+Finished building: Laboratorio 6.list
+ 
+06:15:03 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:224:33: warning: pointer targets in passing argument 2 of 'sprintf' differ in signedness [-Wpointer-sign]
+  224 |            sprintf("Control 1", Up);
+      |                                 ^~
+      |                                 |
+      |                                 uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+C:\ST\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344\tools\bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/stdio.h:250:36: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                                    ^
+arm-none-eabi-gcc -o "Laboratorio 6.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 6\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Laboratorio 6.elf
+ 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+arm-none-eabi-objdump -h -S Laboratorio\ 6.elf  > "Laboratorio 6.list"
+   text	   data	    bss	    dec	    hex	filename
+  23128	    108	   2260	  25496	   6398	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+Finished building: Laboratorio 6.list
+ 
+06:15:39 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23128	    108	   2260	  25496	   6398	Laboratorio 6.elf
+Finished building: default.size.stdout
+ 
+08:41:37 **** Incremental Build of configuration Debug for project Laboratorio 6 ****
+make -j8 all 
+arm-none-eabi-size  Laboratorio\ 6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23128	    108	   2260	  25496	   6398	Laboratorio 6.elf
+Finished building: default.size.stdout
  

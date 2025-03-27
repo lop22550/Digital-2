@@ -1,46 +1,10 @@
-04:16:35 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
+06:04:19 **** Incremental Build of configuration Debug for project Laboratorio 5 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:107:11: warning: implicit declaration of function 'refreshPort' [-Wimplicit-function-declaration]
-  107 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:108:11: warning: implicit declaration of function 'Ganador_indicador' [-Wimplicit-function-declaration]
-  108 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:109:11: warning: implicit declaration of function '_7seg_output' [-Wimplicit-function-declaration]
-  109 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:302:6: warning: conflicting types for 'refreshPort'; have 'void(void)'
-  302 | void refreshPort(void){
-      |      ^~~~~~~~~~~
-../Core/Src/main.c:107:11: note: previous implicit declaration of 'refreshPort' with type 'void(void)'
-  107 |           refreshPort();
-      |           ^~~~~~~~~~~
-../Core/Src/main.c:376:6: warning: conflicting types for '_7seg_output'; have 'void(void)'
-  376 | void _7seg_output(void){
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:109:11: note: previous implicit declaration of '_7seg_output' with type 'void(void)'
-  109 |           _7seg_output();
-      |           ^~~~~~~~~~~~
-../Core/Src/main.c:438:6: warning: conflicting types for 'Ganador_indicador'; have 'void(void)'
-  438 | void Ganador_indicador (void){
-      |      ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:108:11: note: previous implicit declaration of 'Ganador_indicador' with type 'void(void)'
-  108 |           Ganador_indicador();
-      |           ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Laboratorio 5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Laboratorio 5\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Laboratorio 5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Laboratorio 5.elf
- 
 arm-none-eabi-size  Laboratorio\ 5.elf 
-arm-none-eabi-objdump -h -S Laboratorio\ 5.elf  > "Laboratorio 5.list"
    text	   data	    bss	    dec	    hex	filename
    9936	     12	   1652	  11600	   2d50	Laboratorio 5.elf
 Finished building: default.size.stdout
  
-Finished building: Laboratorio 5.list
- 
 
-04:16:38 Build Finished. 0 errors, 6 warnings. (took 2s.637ms)
+06:04:20 Build Finished. 0 errors, 0 warnings. (took 572ms)
 

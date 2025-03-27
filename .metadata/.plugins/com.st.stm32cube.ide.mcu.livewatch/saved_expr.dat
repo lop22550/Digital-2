@@ -1,4 +1,12 @@
-contador_J1
-contador_J2
-Ganador_J1
-Ganador_J2
+lectura_ADC
+estadoADC
+contador
+VRX_mitad
+VRY_mitad
+flag_up
+buffer
+flag_down
+flag_left
+flag_right
+flag_A
+flag_B
