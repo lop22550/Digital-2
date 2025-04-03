@@ -3,6 +3,10 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="huart3"/>
+		<item value="huart"/>
+		<item value="buffer"/>
+		<item value="buffer_terminal"/>
 		<item value="up"/>
 		<item value="huart2"/>
 		<item value="_IT"/>

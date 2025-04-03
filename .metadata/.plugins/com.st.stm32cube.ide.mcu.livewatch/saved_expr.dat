@@ -1,12 +1,6 @@
-lectura_ADC
-estadoADC
-contador
-VRX_mitad
-VRY_mitad
-flag_up
+buffer_terminal
+flag_op1
+flag_op2
+flag_op3
+flag_op4
 buffer
-flag_down
-flag_left
-flag_right
-flag_A
-flag_B
