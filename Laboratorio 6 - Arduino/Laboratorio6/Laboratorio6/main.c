@@ -33,6 +33,8 @@ uint8_t flag_left = 0;
 uint8_t flag_right = 0;
 uint8_t flag_A = 0;
 uint8_t flag_B = 0;
+uint8_t flag_Start = 0;
+uint8_t flag_Select = 0;
 
 
 //***************************
@@ -76,6 +78,16 @@ int main(void) {
 			writeUART('B');
 			flag_B = 0;
 		}
+		
+		if (flag_Start == 1){
+			writeUART('S');
+			flag_Start = 0;
+		}
+		
+		if (flag_Select == 1){
+			writeUART('s');
+			flag_Select = 0;
+		}
     }
 }
 
@@ -90,6 +102,8 @@ void initPorts(void) {
 	DDRD &= ~(1 << DDD5);
 	DDRD &= ~(1 << DDD6);
 	DDRD &= ~(1 << DDD7);
+	DDRB &= ~(1 << DDB0);
+	DDRB &= ~(1 << DDB1);
 	
     // Habilitar pull-up en los botones
     PORTD |= (1 << DDD2);
@@ -98,12 +112,15 @@ void initPorts(void) {
 	PORTD |= (1 << DDD5);
 	PORTD |= (1 << DDD6);
 	PORTD |= (1 << DDD7);
+	PORTB |= (1 << DDB0);
+	PORTB |= (1 << DDB1);
     
     // Habilitar ISR para PB4, PC4 y PD7
     PCICR |= (1 << PCIE0) | (1 << PCIE1) | (1 << PCIE2);
     
     // Habilitar los botones para que funcionen con la interrupción
 	PCMSK2 |= ((1 << PCINT23)| (1 << PCINT22)| (1 << PCINT21)| (1 << PCINT20)| (1 << PCINT19)| (1 << PCINT18));
+	PCMSK0 |= (1 << PCINT1)| (1 << PCINT0);
     
    
 }
@@ -178,6 +195,24 @@ ISR(PCINT2_vect) {
 			 flag_B = 1;
 		  }
 		}
+		
+		
     
 	}
+	
+ISR(PCINT0_vect){
+	if (!(PINB & (1 << PINB0))) {  // Botón del jugador rojo
+			_delay_ms(DEBOUNCE_TIME); // Anti-rrebote
+			if (!(PINB & (1 << PINB0))){
+				flag_Start = 1;
+			}
+		}
+		
+		if (!(PINB & (1 << PINB1))) {  // Botón del jugador rojo
+			_delay_ms(DEBOUNCE_TIME); // Anti-rrebote
+			if (!(PINB & (1 << PINB1))){
+				flag_Select = 1;
+			}
+		}
+}
 

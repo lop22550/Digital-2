@@ -1,0 +1,65 @@
+18:44:48 **** Incremental Build of configuration Debug for project Proyecto2_videojuego ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:97:18: warning: built-in function 'y0' declared as non-function [-Wbuiltin-declaration-mismatch]
+   97 |    const uint8_t y0 = 175;
+      |                  ^~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:186:36: warning: passing argument 5 of 'LCD_Sprite' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  186 |         LCD_Sprite(0, 0, 319, 240, Title_screen_1, 1, 0, 0, 0);
+      |                                    ^~~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:27:
+../Core/Inc/ili9341.h:28:68: note: expected 'unsigned char *' but argument is of type 'const unsigned char *'
+   28 | void LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[], int columns, int index, char flip, char offset);
+      |                                                      ~~~~~~~~~~~~~~^~~~~~~~
+../Core/Src/main.c:232:65: warning: pointer targets in passing argument 2 of 'f_open' differ in signedness [-Wpointer-sign]
+  232 |                                             fres = f_open(&fil, pruebas, FA_READ);
+      |                                                                 ^~~~~~~
+      |                                                                 |
+      |                                                                 uint8_t * {aka unsigned char *}
+In file included from ../FATFS/App/fatfs.h:26,
+                 from ../Core/Src/main.c:21:
+../Middlewares/Third_Party/FatFs/src/ff.h:242:39: note: expected 'const TCHAR *' {aka 'const char *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  242 | FRESULT f_open (FIL* fp, const TCHAR* path, BYTE mode);                         /* Open or create a file */
+      |                          ~~~~~~~~~~~~~^~~~
+../Core/Src/main.c:240:59: warning: passing argument 1 of 'f_gets' from incompatible pointer type [-Wincompatible-pointer-types]
+  240 |                                             while (f_gets(buffer, sizeof(buffer), &fil)){
+      |                                                           ^~~~~~
+      |                                                           |
+      |                                                           uint16_t * {aka short unsigned int *}
+../Middlewares/Third_Party/FatFs/src/ff.h:274:23: note: expected 'TCHAR *' {aka 'char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  274 | TCHAR* f_gets (TCHAR* buff, int len, FIL* fp);                                          /* Get a string from the file */
+      |                ~~~~~~~^~~~
+../Core/Src/main.c:242:66: warning: format '%s' expects argument of type 'char *', but argument 3 has type 'uint16_t *' {aka 'short unsigned int *'} [-Wformat=]
+  242 |                                                   sprintf(mRd, "%s", buffer);
+      |                                                                 ~^   ~~~~~~
+      |                                                                  |   |
+      |                                                                  |   uint16_t * {aka short unsigned int *}
+      |                                                                  char *
+      |                                                                 %hn
+../Core/Src/main.c:272:46: warning: passing argument 5 of 'LCD_Sprite' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  272 |                   LCD_Sprite(0, 0, 319, 240, Title_screen_8, 1, 0, 0, 0);
+      |                                              ^~~~~~~~~~~~~~
+../Core/Inc/ili9341.h:28:68: note: expected 'unsigned char *' but argument is of type 'const unsigned char *'
+   28 | void LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[], int columns, int index, char flip, char offset);
+      |                                                      ~~~~~~~~~~~~~~^~~~~~~~
+../Core/Src/main.c:292:46: warning: passing argument 5 of 'LCD_Sprite' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  292 |                   LCD_Sprite(0, 0, 319, 240, PAUSE_MENU, 1, 0, 0, 0);
+      |                                              ^~~~~~~~~~
+../Core/Inc/ili9341.h:28:68: note: expected 'unsigned char *' but argument is of type 'const unsigned char *'
+   28 | void LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[], int columns, int index, char flip, char offset);
+      |                                                      ~~~~~~~~~~~~~~^~~~~~~~
+arm-none-eabi-gcc -o "Proyecto2_videojuego.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proyecto2_videojuego.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Proyecto2_videojuego.elf
+ 
+arm-none-eabi-size  Proyecto2_videojuego.elf 
+arm-none-eabi-objdump -h -S Proyecto2_videojuego.elf  > "Proyecto2_videojuego.list"
+   text	   data	    bss	    dec	    hex	filename
+ 495380	   6696	  11232	 513308	  7d51c	Proyecto2_videojuego.elf
+Finished building: default.size.stdout
+ 
+Finished building: Proyecto2_videojuego.list
+ 
+
+18:44:53 Build Finished. 0 errors, 7 warnings. (took 5s.878ms)
+

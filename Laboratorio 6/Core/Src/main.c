@@ -146,8 +146,7 @@ HAL_UART_Receive_IT(&huart3, temp, 1);
 	  }
 
 	  //VRX_mitad = (lectura_ADC[1])/2;
-	  //VRY_mitad = (lectura_ADC[0])/2;
-
+	  //VRY_mitad = (lectura_ADC[0])/2;-
 
 	  if (lectura_ADC[1] >= VRX_mitad){HAL_UART_Transmit(&huart2, Derecha, sizeof(Derecha), 2000);}
 	  if(lectura_ADC[1] < VRX_mitad){HAL_UART_Transmit(&huart2, Izquierda, sizeof(Izquierda), 2000);}

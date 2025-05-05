@@ -1,0 +1,10 @@
+10:41:13 **** Incremental Build of configuration Debug for project Sonido ****
+make -j8 all 
+arm-none-eabi-size  Sonido.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21308	    292	   2412	  24012	   5dcc	Sonido.elf
+Finished building: default.size.stdout
+ 
+
+10:41:13 Build Finished. 0 errors, 0 warnings. (took 622ms)
+

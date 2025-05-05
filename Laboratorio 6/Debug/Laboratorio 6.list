@@ -567,10 +567,10 @@ HAL_UART_Receive_IT(&huart3, temp, 1);
  80006b4:	4b8b      	ldr	r3, [pc, #556]	@ (80008e4 <main+0x308>)
  80006b6:	2200      	movs	r2, #0
  80006b8:	701a      	strb	r2, [r3, #0]
+	  }
 
 	  //VRX_mitad = (lectura_ADC[1])/2;
-	  //VRY_mitad = (lectura_ADC[0])/2;
-
+	  //VRY_mitad = (lectura_ADC[0])/2;-
 
 	  if (lectura_ADC[1] >= VRX_mitad){HAL_UART_Transmit(&huart2, Derecha, sizeof(Derecha), 2000);}
  80006ba:	4b85      	ldr	r3, [pc, #532]	@ (80008d0 <main+0x2f4>)
