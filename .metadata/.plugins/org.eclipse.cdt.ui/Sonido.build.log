@@ -1,10 +1,29 @@
-10:41:13 **** Incremental Build of configuration Debug for project Sonido ****
+14:27:02 **** Incremental Build of configuration Debug for project Sonido ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'generarSin':
+../Core/Src/main.c:187:30: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+  187 |                 Ysine[x] = ((sin(x*2*PI/size)+1)*(4096/2));
+      |                              ^~~
+../Core/Src/main.c:24:1: note: include '<math.h>' or provide a declaration of 'sin'
+   23 | #include "stdio.h"
+  +++ |+#include <math.h>
+   24 | 
+../Core/Src/main.c:187:30: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+  187 |                 Ysine[x] = ((sin(x*2*PI/size)+1)*(4096/2));
+      |                              ^~~
+../Core/Src/main.c:187:30: note: include '<math.h>' or provide a declaration of 'sin'
+arm-none-eabi-gcc -o "Sonido.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Sonido\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Sonido.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Sonido.elf
+ 
 arm-none-eabi-size  Sonido.elf 
+arm-none-eabi-objdump -h -S Sonido.elf  > "Sonido.list"
    text	   data	    bss	    dec	    hex	filename
-  21308	    292	   2412	  24012	   5dcc	Sonido.elf
+  24108	    996	   2708	  27812	   6ca4	Sonido.elf
 Finished building: default.size.stdout
  
+Finished building: Sonido.list
+ 
 
-10:41:13 Build Finished. 0 errors, 0 warnings. (took 622ms)
+14:27:06 Build Finished. 0 errors, 2 warnings. (took 3s.357ms)
 

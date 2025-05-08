@@ -1,0 +1,85 @@
+2025-05-07 04:38:39,908 [INFO] WebApp:194 - Connection lost
+2025-05-07 04:38:40,110 [INFO] WebApp:191 - Connection restablished
+2025-05-07 06:48:31,452 [INFO] WebApp:194 - Connection lost
+2025-05-07 06:48:31,633 [INFO] WebApp:191 - Connection restablished
+2025-05-07 09:50:01,487 [INFO] WebApp:194 - Connection lost
+2025-05-07 09:50:01,723 [INFO] WebApp:191 - Connection restablished
+2025-05-07 10:00:19,367 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,833x184,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-07 10:00:54,345 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 734253888 Bytes (1073741824)
+2025-05-07 10:00:54,525 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 749982528 Bytes (1073741824)
+2025-05-07 10:00:55,548 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 829511000 Bytes (1073741824)
+2025-05-07 10:00:56,847 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-05-07 10:00:56,847 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-07 10:00:56,847 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-07 10:00:56,848 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-07 10:00:56,848 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-05-07 10:00:56,848 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-05-07 10:00:56,848 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-05-07 10:00:56,848 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: UART
+2025-05-07 10:00:56,851 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-07 10:00:56,852 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-05-07 10:00:56,856 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-07 10:00:57,637 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\license.tmp_save
+2025-05-07 10:00:59,205 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\license.tmp
+2025-05-07 10:00:59,374 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\gpio.tmp_save
+2025-05-07 10:00:59,640 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\gpio.tmp
+2025-05-07 10:01:03,214 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-07 10:01:03,230 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-05-07 10:01:03,462 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_HalInit.tmp
+2025-05-07 10:01:03,473 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_vars.tmp_save
+2025-05-07 10:01:03,665 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_vars.tmp
+2025-05-07 10:01:03,682 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-05-07 10:01:03,855 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_ext_vars.tmp
+2025-05-07 10:01:03,868 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_inc.tmp_save
+2025-05-07 10:01:04,010 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_inc.tmp
+2025-05-07 10:01:04,429 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\dma.tmp_save
+2025-05-07 10:01:04,605 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\dma.tmp
+2025-05-07 10:01:04,617 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\dma_GV.tmp_save
+2025-05-07 10:01:04,777 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\dma_GV.tmp
+2025-05-07 10:01:04,801 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-07 10:01:04,827 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-05-07 10:01:05,003 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_HalInit.tmp
+2025-05-07 10:01:05,027 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_vars.tmp_save
+2025-05-07 10:01:05,426 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_vars.tmp
+2025-05-07 10:01:05,448 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-05-07 10:01:05,847 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_ext_vars.tmp
+2025-05-07 10:01:05,863 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_inc.tmp_save
+2025-05-07 10:01:06,032 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\fatfs_inc.tmp
+2025-05-07 10:01:06,053 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\FATFS\Target\ffconf.h_save
+2025-05-07 10:01:06,277 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\FATFS\Target\ffconf.h
+2025-05-07 10:01:06,307 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\FATFS\Target\user_diskio.c_save
+2025-05-07 10:01:06,485 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\FATFS\Target\user_diskio.c
+2025-05-07 10:01:06,508 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\FATFS\Target\user_diskio.h_save
+2025-05-07 10:01:06,673 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\FATFS\Target\user_diskio.h
+2025-05-07 10:01:06,692 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\FATFS\App\fatfs.c_save
+2025-05-07 10:01:06,884 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\FATFS\App\fatfs.c
+2025-05-07 10:01:06,903 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\FATFS\App\fatfs.h_save
+2025-05-07 10:01:07,047 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\FATFS\App\fatfs.h
+2025-05-07 10:01:07,095 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\Core\Src\stm32f4xx_it.c_save
+2025-05-07 10:01:07,350 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\Core\Src\stm32f4xx_it.c
+2025-05-07 10:01:07,368 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\Core\Inc\stm32f4xx_it.h_save
+2025-05-07 10:01:07,507 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\Core\Inc\stm32f4xx_it.h
+2025-05-07 10:01:07,552 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\Core\Src\stm32f4xx_hal_msp.c_save
+2025-05-07 10:01:07,806 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\Core\Src\stm32f4xx_hal_msp.c
+2025-05-07 10:01:07,825 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\system.tmp_save
+2025-05-07 10:01:07,941 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\MXTmpFiles\system.tmp
+2025-05-07 10:01:07,978 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\Core\Inc\stm32f4xx_hal_conf.h_save
+2025-05-07 10:01:08,128 [INFO] CodeEngine:343 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\Core\Inc\stm32f4xx_hal_conf.h
+2025-05-07 10:01:08,211 [WARN] IPConfigManager:3174 - Warning: the RefConfig PLL2P_FOR_MCO is not available in your config.xml file
+2025-05-07 10:01:08,231 [INFO] ApiDbMcu:508 - Load IP Config File for SPI1
+2025-05-07 10:01:08,239 [INFO] ApiDbMcu:508 - Load IP Config File for UART5
+2025-05-07 10:01:08,247 [INFO] ApiDbMcu:508 - Load IP Config File for USART2
+2025-05-07 10:01:08,255 [INFO] ApiDbMcu:508 - Load IP Config File for USART3
+2025-05-07 10:01:08,263 [INFO] ApiDbMcu:508 - Load IP Config File for RCC
+2025-05-07 10:01:08,299 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\Core\Inc\main.h_save
+2025-05-07 10:01:08,481 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\Core\Inc\main.h
+2025-05-07 10:01:08,496 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\Core\Src\main.c_save
+2025-05-07 10:01:08,750 [INFO] CodeEngine:287 - Generated code: C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\Core\Src\main.c
+2025-05-07 10:01:09,657 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 454mS.
+2025-05-07 10:01:09,678 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-07 10:01:09,837 [INFO] ConfigFileManager:1590 - The Die is : DIE421
+2025-05-07 10:01:09,881 [INFO] ApiDbMcu:508 - Load IP Config File for FREERTOS
+2025-05-07 10:01:09,885 [INFO] ApiDbMcu:508 - Load IP Config File for LIBJPEG
+2025-05-07 10:01:09,900 [INFO] ApiDbMcu:508 - Load IP Config File for MBEDTLS
+2025-05-07 10:01:09,914 [INFO] ApiDbMcu:508 - Load IP Config File for USB_DEVICE
+2025-05-07 10:01:09,921 [INFO] ApiDbMcu:508 - Load IP Config File for USB_HOST

@@ -25,7 +25,7 @@ void setup() {
   pinMode(LED2, OUTPUT);
 
 
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial2.begin(9600, SERIAL_8N1, RXuart2, TXuart2);
   Serial.println("Serial 2 started at 9600 baud rate");
 
@@ -56,12 +56,8 @@ void loop() {
     Data = Serial2.read();
     Serial.print(Data);
   }
-  //delay(1000);
-  //Serial.println("-------------------------------");
-  
-  
+
   delay(50);
   BT.write(Data); // Envía los valores del control por Bluetooth
-  //BT.write(49);
 
 }

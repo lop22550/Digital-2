@@ -63,8 +63,12 @@ SPI_HandleTypeDef hspi1;
 UART_HandleTypeDef huart5;
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
+DMA_HandleTypeDef hdma_uart5_rx;
+DMA_HandleTypeDef hdma_uart5_tx;
 DMA_HandleTypeDef hdma_usart2_rx;
 DMA_HandleTypeDef hdma_usart2_tx;
+DMA_HandleTypeDef hdma_usart3_tx;
+DMA_HandleTypeDef hdma_usart3_rx;
 
 /* USER CODE BEGIN PV */
 extern unsigned char fondo[];
@@ -90,17 +94,21 @@ uint8_t Up[] = "Up\r\n";
    uint8_t Hola[] = "Hola\r\n";
 
 
-   uint8_t position_X = 100;
-   uint8_t position_Y = 175;
-
    // Coordenadas X y Y iniciales y otros valores constantes de samus al iniciar el juego
-   const uint8_t x0 = 159;
+   const uint8_t x0 = 100;
    const uint8_t y0 = 175;
    const uint8_t h = 111; //175 - 64 (el doble de la altura de samus)
 
+   //Coordenadas de Ridley
+   const uint8_t x0r = 250;
+   const uint8_t y0r = 162;
+   uint8_t xr = 250;
+   uint8_t yr = 162;
+
+
    //Coordenas X y Y que varían según la acción del control
-   uint8_t xf;
-   uint8_t yf;
+   uint8_t xf = 100;
+   uint8_t yf = 175;
 
 
    uint8_t flag_title = 0;
@@ -110,9 +118,10 @@ uint8_t Up[] = "Up\r\n";
 #define TRANSITION1 2
 #define JUEGO 3
 #define PAUSE 4
+#define GameOver 5
 
 
-   uint8_t pruebas []= "pruebas.txt";
+uint8_t pruebas []= "pruebas.txt";
 
 
 /* USER CODE END PV */
@@ -128,12 +137,15 @@ static void MX_UART5_Init(void);
 /* USER CODE BEGIN PFP */
 
 void MECHANICS(void);
+void MECHANICS_Ridley(void);
 
 //FUNCIÓN PARA MOSTRAR ESTADOS DE LECTURA DE LA TARJETA SD
 void transmit_uart(char *string){
 	uint8_t len = strlen(string);
 	HAL_UART_Transmit(&huart2, (uint8_t*) string , len, 200);
 }
+
+
 
 /* USER CODE END PFP */
 
@@ -186,20 +198,8 @@ int main(void)
 
 
   	Estado_de_juego = INTRO;
-  	LCD_Sprite(0, 0, 319, 240, Title_screen_1, 1, 0, 0, 0);
+  	//LCD_Sprite(0, 0, 319, 240, Title_screen_1, 1, 0, 0, 0);
   	HAL_Delay(100);
-  	/*LCD_Sprite(0, 0, 319, 240, Title_screen_2, 1, 0, 0, 0);
-  	HAL_Delay(100);
-  	LCD_Sprite(0, 0, 319, 240, Title_screen_3, 1, 0, 0, 0);
-  	HAL_Delay(100);
-  	LCD_Sprite(0, 0, 319, 240, Title_screen_4, 1, 0, 0, 0);
-  	LCD_Sprite(0, 0, 319, 240, Title_screen_5, 1, 0, 0, 0);
-  	HAL_Delay(100);
-  	LCD_Sprite(0, 0, 319, 240, Title_screen_6, 1, 0, 0, 0);
-  	HAL_Delay(100);
-  	LCD_Sprite(0, 0, 319, 240, Title_screen_7, 1, 0, 0, 0);
-  	HAL_Delay(100);*/
-
 
 
   	HAL_UART_Receive_DMA(&huart2, temp, 1);
@@ -210,6 +210,8 @@ int main(void)
   	xf = x0;
   	yf = y0;
 
+  	xr = x0r;
+  	yr = y0r;
 
 
   /* USER CODE END 2 */
@@ -224,55 +226,8 @@ int main(void)
 	  switch (Estado_de_juego){
 	  case INTRO:
 
-		  //Montamos el sistema de archivos
-		    		    fres = f_mount(&fs, "/", 0);
-		    		    if (fres == FR_OK){
-		    		  	  transmit_uart("Micro SD card is mounted successfully\n");
-		    		    } else if (fres != FR_OK){
-		    		  	  transmit_uart("Micro SD card's mount error!\n");
-		    		    }
+		  HAL_UART_Transmit(&huart5, 1, 8, HAL_MAX_DELAY);
 
-		                    //Abrimos el archivo en modo lectura
-		          		    fres = f_open(&fil, pruebas, FA_READ);
-		          		    if (fres == FR_OK){
-		          		  	  transmit_uart("File opened for reading. \n");
-		          		    } else if (fres != FR_OK){
-		          		  	  transmit_uart("File was not opened for reading. \n");
-		          		    }
-
-		          		    //Leemos el archivo
-		          		    while (f_gets(buffer, sizeof(buffer), &fil)){
-		          		  	  char mRd[100];
-		          		  	  sprintf(mRd, "%s", buffer);
-		          		  	  transmit_uart(mRd);
-		          		    }
-
-		          		    //Cerramos el archivo
-		          		      fres = f_close(&fil);
-		          		      if (fres == FR_OK){
-		          		    	  transmit_uart("The file is closed. \n");
-		          		      } else if (fres != FR_OK){
-		          		    	  transmit_uart("The file was not closed. \n");
-		          		      }
-
-		          		    //Desmontamos el sistema de archivos
-		          		            	    	 f_mount(NULL,  "", 1);
-		          		            	    	 if (fres == FR_OK){
-		          		            	    		 transmit_uart("The Micro SD card is unmounted! \n");
-		          		            	    	 } else if (fres != FR_OK){
-		          		            	    		 transmit_uart("The Micro SD card was not unmounted! \n");
-		          		            	    	 }
-
-
-
-
-		  /*LCD_Sprite(0, 0, 319, 240, Title_screen_1, 1, 0, 0, 0);
-		  LCD_Sprite(0, 0, 319, 240, Title_screen_2, 1, 0, 0, 0);
-		  LCD_Sprite(0, 0, 319, 240, Title_screen_3, 1, 0, 0, 0);
-		  LCD_Sprite(0, 0, 319, 240, Title_screen_4, 1, 0, 0, 0);
-		  LCD_Sprite(0, 0, 319, 240, Title_screen_5, 1, 0, 0, 0);
-		  LCD_Sprite(0, 0, 319, 240, Title_screen_6, 1, 0, 0, 0);
-		  LCD_Sprite(0, 0, 319, 240, Title_screen_7, 1, 0, 0, 0);*/
 		  LCD_Sprite(0, 0, 319, 240, Title_screen_8, 1, 0, 0, 0);
 
 		  if (flag_title == 1){
@@ -292,37 +247,28 @@ int main(void)
 		  Estado_de_juego = JUEGO;
 		  break;
 
-	   case PAUSE:
-		  LCD_Sprite(0, 0, 319, 240, PAUSE_MENU, 1, 0, 0, 0);
-		  /*FillRect(0, 0, 319, 206, 0x0000);
-		  for (int x = 0; x < 319; x++) {
-			LCD_Bitmap(x, 207, 16, 16, tile_brinstar1);
-		  	LCD_Bitmap(x, 223, 16, 16, tile_brinstar1);
-		  	x += 15;
-		  }*/
-		   Estado_de_juego = JUEGO;
-		  break;
+
 
 	  case JUEGO:
+		  HAL_UART_Transmit(&huart5, 2, 8,HAL_MAX_DELAY);
+		  MECHANICS_Ridley();
 		  MECHANICS();
+
 	  	  break;
+	  case GameOver:
+		  LCD_Clear(0x00);
+		  //FillRect(0, 0, 319, 239, 0xFFFF);
+		  LCD_Sprite(159, 120, 81, 9, GameOver, 1, 0, 0, 0);
+		  HAL_Delay(1000);
+		  Estado_de_juego = INTRO;
+
+		  break;
 
 	  }
 
 
 
 
-
-
-
-
-
-	 /* for (int var = 319 - 20; var > 0; var-- ) {
-	  		  int anim = (var/5)% 4; //Me entrega los valores para los indices de la animacion de samus
-	  		  LCD_Sprite(var, 175, 20, 32, samus_Idle_walk,4, anim, 1, 0);
-	  		  V_line(var +21, 175, 32, 0x0000);
-	  		  HAL_Delay(5);
-	  	}*/
 
 
 
@@ -528,12 +474,24 @@ static void MX_DMA_Init(void)
   __HAL_RCC_DMA1_CLK_ENABLE();
 
   /* DMA interrupt init */
+  /* DMA1_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
+  /* DMA1_Stream1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
+  /* DMA1_Stream3_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream3_IRQn);
   /* DMA1_Stream5_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
   /* DMA1_Stream6_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
+  /* DMA1_Stream7_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream7_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream7_IRQn);
 
 }
 
@@ -730,6 +688,16 @@ void MECHANICS (void){
 }
 
 
+void MECHANICS_Ridley(void){
+	//LCD_Sprite(x, y, width, height, bitmap, columns, index, flip, offset)
+	LCD_Sprite(xr, yr, 31, 46, ridley, 6, 1, 1, 0);
+
+	if (xf >= 250 ){
+		Estado_de_juego = GameOver;
+		xf = x0;
+	}
+}
+
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 
@@ -740,9 +708,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 	}
 
 
-	//HAL_UART_Receive_IT(&huart2, temp, 1);
+    HAL_UART_Receive_DMA(&huart2, temp, 1);
 
-	HAL_UART_Receive_DMA(&huart2, temp, 1);
+	HAL_UART_Receive_DMA(&huart3, temp, 1);
 
 //--------------------------Inicio del bloque para transmitir------------------------------------------------------------
 		for(int i = 0; i < 10; i++) {
@@ -785,9 +753,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 				buffer[i] = 0;
 			}
 
-			if (buffer[i] == 115){ //83 es ASCII de s minúscula
+			if (buffer[i] == 115){ //115 es ASCII de s minúscula
 				flag_Select = 1;
-				Estado_de_juego = PAUSE;
+				//Estado_de_juego = PAUSE;
 				buffer[i] = 0;
 			}
 

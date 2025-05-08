@@ -153,7 +153,7 @@ void writeUART(char caracter) {
 
 // Interrupción para el botón rojo 
 ISR(PCINT2_vect) {
-        if (!(PIND & (1 << PIND2))) {  // Botón del jugador rojo
+        if (!(PIND & (1 << PIND2))) {  
 	        _delay_ms(DEBOUNCE_TIME); // Anti-rrebote
 	        if (!(PIND & (1 << PIND2))){
 		        flag_up = 1;

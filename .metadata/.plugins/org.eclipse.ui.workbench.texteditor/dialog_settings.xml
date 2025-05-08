@@ -3,8 +3,11 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
-		<item value="huart3"/>
+		<item value="gameover"/>
+		<item value="trans"/>
 		<item value="Receive"/>
+		<item value="huart2"/>
+		<item value="huart3"/>
 		<item value="title"/>
 		<item value="flag_title"/>
 		<item value="flag_A"/>
@@ -14,9 +17,7 @@
 		<item value="huart"/>
 		<item value="buffer_terminal"/>
 		<item value="up"/>
-		<item value="huart2"/>
 		<item value="_IT"/>
-		<item value="IT"/>
 	</list>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="selection" value="&#x09;  if (flag_right == 1){"/>

@@ -19,7 +19,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-#include "math.h"
+#include "string.h"
+#include "stdio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -48,9 +49,47 @@ DMA_HandleTypeDef hdma_dac1;
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim6;
 
+UART_HandleTypeDef huart5;
 UART_HandleTypeDef huart2;
+DMA_HandleTypeDef hdma_uart5_rx;
+DMA_HandleTypeDef hdma_uart5_tx;
 
 /* USER CODE BEGIN PV */
+#define C3  131   // Do
+#define Cs3 139   // Do# / Reb3
+#define D3  147   // Re
+#define Ds3 156   // Re# / Mib3
+#define E3  165   // Mi
+#define F3  175   // Fa
+#define Fs3 185   // Fa# / Solb3
+#define G3  196   // Sol
+#define Gs3 208   // Sol# / Lab3
+#define A3  220   // La
+#define As3 233   // La# / Sib3
+#define B3  247   // Si
+#define C4  261  // Do
+#define D4  293  // Re
+#define E4  329  // Mi
+#define F4  349  // Fa
+#define G4  392  // Sol
+#define A4  440  // La
+#define B4  494  // Si
+#define C5  523
+#define D5  587
+#define E5  659
+#define F5  698
+#define G5  784
+#define A5  880
+#define B5  988
+#define C6  1047
+#define D6  1175
+#define E6  1319
+#define F6  1397
+#define G6  1568
+#define A6  1760
+#define B6  1976
+#define SILENCIO 0
+
 
 #define size 128
 uint32_t Ysine[size];
@@ -59,50 +98,58 @@ uint32_t Ysine[size];
 #define TIM_FREQ 84000000
 #define PSC 1                    //Prescaler
 
+
+uint16_t buffer[10];
+uint8_t temp[2];
+uint16_t indx  = 0;
+uint8_t flag_melodia = 0;
+
+
+int MelodiaIntro [] = {
+		E5, D5, C5, D5, E5, D5, C5, D5,
+		    E5, F5, G5, A5, G5, F5, E5, D5,
+		    C5, D5, E5, D5, C5, D5, E5,
+		    C5, D5, E5, D5, C5, D5, E5,
+		    C5, D5, E5, F5, E5, D5, C5,
+		    D5, E5, F5, E5, D5, C5, D5,
+		    E5, D5, C5, D5, E5, D5, C5, D5,
+		    E5, F5, G5, A5, G5, F5, E5
+};
+
+int MelodiaIntroDuraciones [] = {
+		300, 300, 300, 600, 300, 300, 300, 600,
+		    300, 300, 300, 600, 300, 300, 300, 600,
+		    300, 300, 300, 300, 300, 300, 600,
+		    300, 300, 300, 300, 300, 300, 600,
+		    300, 300, 300, 300, 300, 300, 600,
+		    300, 300, 300, 300, 300, 300, 600,
+		    300, 300, 300, 600, 300, 300, 300, 600,
+		    300, 300, 300, 300, 300, 300, 600
+};
+
 int Metroidmelody []  ={
-		/*440.00, // A4
-		    493.88, // B4
-		    523.25, // C5
-		    587.33, // D5
-		    659.25, // E5
-		    587.33, // D5
-		    523.25, // C5
-		    493.88, // B4
-		    440.00, // A4
-		    392.00, // G4
-		    349.23, // F4
-		    392.00, // G4
-		    440.00, // A4
-		    0.0     // Silence*/
 
-		659.25, 659.25, 0.0,    659.25, 0.0,    523.25, 659.25, 0.0,
-		    784.00, 0.0,    392.00, 0.0,    523.25, 0.0,    392.00, 0.0,
-		    330.00, 0.0,    440.00, 0.0,    494.00, 0.0,    466.00, 0.0,
-		    440.00, 0.0,    392.00, 659.25, 784.00, 698.46, 659.25, 0.0,
-		    523.25, 587.33, 494.00
 
+		E5, G5, A5, E5, G5, A5, E5, G5,
+		    A5, G5, F5, E5, D5, F5, E5, D5,
+		    C5, E5, D5, C5, B4, D5, C5, B4,
+		    A4, C5, B4, A4, G4, B4, A4, G4,
+		    F4, A4, G4, F4, E4, G4, F4, E4,
+		    D4, F4, E4, D4, C4, E4, D4, C4,
+		    B3, D4, C4, B3, A3, C4, B3, A3,
+		    G3, B3, A3, G3, F3, A3, G3, F3
 };
 int Metroiddurations [] = {
-		/*400, // A4
-		    400, // B4
-		    400, // C5
-		    400, // D5
-		    400, // E5
-		    400, // D5
-		    400, // C5
-		    400, // B4
-		    400, // A4
-		    400, // G4
-		    400, // F4
-		    400, // G4
-		    800, // A4
-		    400  // Silence (pausa)*/
 
-		150, 150, 150, 150, 150, 150, 150, 150,
-		    300, 300, 300, 150, 150, 150, 150, 150,
-		    300, 150, 150, 150, 150, 150, 150, 150,
-		    150, 150, 150, 150, 150, 150, 300, 150,
-		    150, 150, 300
+
+		200, 200, 200, 200, 200, 200, 200, 200,
+		    200, 200, 200, 200, 200, 200, 200, 200,
+		    200, 200, 200, 200, 200, 200, 200, 200,
+		    200, 200, 200, 200, 200, 200, 200, 200,
+		    400, 400, 400, 400, 400, 400, 400, 400,
+		    200, 200, 200, 200, 200, 200, 200, 200,
+		    200, 200, 200, 200, 200, 200, 200, 200,
+		    400, 400, 400, 400, 400, 400, 400, 400
 
 
 };
@@ -118,11 +165,18 @@ static void MX_USART2_UART_Init(void);
 static void MX_DAC_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM6_Init(void);
+static void MX_UART5_Init(void);
 /* USER CODE BEGIN PFP */
 void generarSin(void);
 int calcularARR(int freq);
 void playTone(int *tone, int *duration, int *pause, int Nsize);
 void noTone (void);
+
+
+void transmit_uart(char *string){
+	uint8_t len = strlen(string);
+	HAL_UART_Transmit(&huart2, (uint8_t*) string , len, 200);
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -199,6 +253,7 @@ int main(void)
   MX_DAC_Init();
   MX_TIM1_Init();
   MX_TIM6_Init();
+  MX_UART5_Init();
   /* USER CODE BEGIN 2 */
   generarSin();
 
@@ -208,13 +263,35 @@ int main(void)
 
   HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_1, Ysine, size, DAC_ALIGN_12B_R);
 
-  playTone(Metroidmelody, Metroiddurations, NULL, (sizeof(Metroidmelody)/sizeof(Metroidmelody[0])) );
+
+  HAL_UART_Receive_DMA(&huart5, temp, 1);
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  switch (flag_melodia) {
+		case 1:
+			  playTone(MelodiaIntro, MelodiaIntroDuraciones, NULL, (sizeof(MelodiaIntro)/sizeof(MelodiaIntro[0])) );
+			  //flag_melodia = 0;
+			  transmit_uart("Aqui estamos en melodia de intro \n");
+
+			break;
+		case 2:
+              playTone(Metroidmelody, Metroiddurations, NULL, (sizeof(Metroidmelody)/sizeof(Metroidmelody[0])) );
+              //flag_melodia = 0;
+              transmit_uart("Aqui estamos en melodia del juego \n");
+			break;
+		default:
+			transmit_uart("Aqui no está pasando nada, no recibe nada \n");
+			break;
+	}
+
+	  HAL_Delay(500);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -394,6 +471,39 @@ static void MX_TIM6_Init(void)
 }
 
 /**
+  * @brief UART5 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_UART5_Init(void)
+{
+
+  /* USER CODE BEGIN UART5_Init 0 */
+
+  /* USER CODE END UART5_Init 0 */
+
+  /* USER CODE BEGIN UART5_Init 1 */
+
+  /* USER CODE END UART5_Init 1 */
+  huart5.Instance = UART5;
+  huart5.Init.BaudRate = 9600;
+  huart5.Init.WordLength = UART_WORDLENGTH_8B;
+  huart5.Init.StopBits = UART_STOPBITS_1;
+  huart5.Init.Parity = UART_PARITY_NONE;
+  huart5.Init.Mode = UART_MODE_TX_RX;
+  huart5.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart5.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN UART5_Init 2 */
+
+  /* USER CODE END UART5_Init 2 */
+
+}
+
+/**
   * @brief USART2 Initialization Function
   * @param None
   * @retval None
@@ -436,9 +546,15 @@ static void MX_DMA_Init(void)
   __HAL_RCC_DMA1_CLK_ENABLE();
 
   /* DMA interrupt init */
+  /* DMA1_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
   /* DMA1_Stream5_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
+  /* DMA1_Stream7_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream7_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream7_IRQn);
 
 }
 
@@ -458,6 +574,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
@@ -482,6 +599,40 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+
+	    memcpy (buffer + indx, temp, 1);
+		indx++;
+		if(indx >= 10){
+			indx = 0;
+		}
+
+
+	    HAL_UART_Receive_DMA(&huart5, temp, 1);
+
+	    transmit_uart("ENTRO \n");
+
+
+	    for(int i = 0; i < 10; i++) {
+	    			if (buffer[i] == 1){
+	    				flag_melodia = 1;
+	    				transmit_uart("melodia 1 en la interrupcion");
+	    				buffer[i] = 0;
+	    			}
+	    			if (buffer[i] == 2){
+	    				 flag_melodia = 2;
+	    				 transmit_uart("melodia 2 en la interrupcion");
+	       	    	     buffer[i] = 0;
+	    			}
+	    }
+}
+
+
+
+
+
+
 
 /* USER CODE END 4 */
 
