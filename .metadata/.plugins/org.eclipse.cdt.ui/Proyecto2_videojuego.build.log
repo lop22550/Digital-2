@@ -1,66 +1,10 @@
-13:40:20 **** Incremental Build of configuration Debug for project Proyecto2_videojuego ****
+20:40:55 **** Incremental Build of configuration Debug for project Proyecto2_videojuego ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:99:18: warning: built-in function 'y0' declared as non-function [-Wbuiltin-declaration-mismatch]
-   99 |    const uint8_t y0 = 175;
-      |                  ^~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:229:46: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
-  229 |                   HAL_UART_Transmit(&huart5, 1, 8, HAL_MAX_DELAY);
-      |                                              ^
-      |                                              |
-      |                                              int
-In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
-                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int'
-  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-../Core/Src/main.c:231:46: warning: passing argument 5 of 'LCD_Sprite' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  231 |                   LCD_Sprite(0, 0, 319, 240, Title_screen_8, 1, 0, 0, 0);
-      |                                              ^~~~~~~~~~~~~~
-In file included from ../Core/Src/main.c:27:
-../Core/Inc/ili9341.h:28:68: note: expected 'unsigned char *' but argument is of type 'const unsigned char *'
-   28 | void LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[], int columns, int index, char flip, char offset);
-      |                                                      ~~~~~~~~~~~~~~^~~~~~~~
-../Core/Src/main.c:253:46: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
-  253 |                   HAL_UART_Transmit(&huart5, 2, 8,HAL_MAX_DELAY);
-      |                                              ^
-      |                                              |
-      |                                              int
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int'
-  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-../Core/Src/main.c:121:18: warning: passing argument 5 of 'LCD_Sprite' makes pointer from integer without a cast [-Wint-conversion]
-  121 | #define GameOver 5
-      |                  ^
-      |                  |
-      |                  int
-../Core/Src/main.c:261:47: note: in expansion of macro 'GameOver'
-  261 |                   LCD_Sprite(159, 120, 81, 9, GameOver, 1, 0, 0, 0);
-      |                                               ^~~~~~~~
-../Core/Inc/ili9341.h:28:68: note: expected 'unsigned char *' but argument is of type 'int'
-   28 | void LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[], int columns, int index, char flip, char offset);
-      |                                                      ~~~~~~~~~~~~~~^~~~~~~~
-../Core/Src/main.c:261:19: warning: 'LCD_Sprite' accessing 1 byte in a region of size 0 [-Wstringop-overflow=]
-  261 |                   LCD_Sprite(159, 120, 81, 9, GameOver, 1, 0, 0, 0);
-      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:261:19: note: referencing argument 5 of type 'unsigned char[0]'
-../Core/Inc/ili9341.h:28:6: note: in a call to function 'LCD_Sprite'
-   28 | void LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[], int columns, int index, char flip, char offset);
-      |      ^~~~~~~~~~
-arm-none-eabi-gcc -o "Proyecto2_videojuego.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bjosu\OneDrive\Documentos\GitHub\Digital-2\Proyecto2_videojuego\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proyecto2_videojuego.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Proyecto2_videojuego.elf
- 
 arm-none-eabi-size  Proyecto2_videojuego.elf 
-arm-none-eabi-objdump -h -S Proyecto2_videojuego.elf  > "Proyecto2_videojuego.list"
    text	   data	    bss	    dec	    hex	filename
  172360	  23720	   2504	 198584	  307b8	Proyecto2_videojuego.elf
 Finished building: default.size.stdout
  
-Finished building: Proyecto2_videojuego.list
- 
 
-13:40:23 Build Finished. 0 errors, 6 warnings. (took 2s.801ms)
+20:40:55 Build Finished. 0 errors, 0 warnings. (took 591ms)
 

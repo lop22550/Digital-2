@@ -2351,8 +2351,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 	    transmit_uart("ENTRO \n");
  8001580:	481d      	ldr	r0, [pc, #116]	@ (80015f8 <HAL_UART_RxCpltCallback+0xb4>)
  8001582:	f7ff fc7d 	bl	8000e80 <transmit_uart>
-	   // HAL_Delay(500);
-
 
 
 	    for(int i = 0; i < 10; i++) {
