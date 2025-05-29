@@ -3,6 +3,8 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="aTxBuffer"/>
+		<item value="delay"/>
 		<item value="valorADC"/>
 		<item value="gameover"/>
 		<item value="trans"/>
@@ -16,8 +18,6 @@
 		<item value="buffer"/>
 		<item value="&amp;huart3"/>
 		<item value="huart"/>
-		<item value="buffer_terminal"/>
-		<item value="up"/>
 	</list>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="selection" value="&#x09;  if (flag_right == 1){"/>

@@ -2,3 +2,9 @@ buffer_terminal
 buffer
 flag_up
 valorLDR6
+aTxBuffer
+aRxBuffer
+Park5_available
+Park6_available
+Park7_available
+Park8_available

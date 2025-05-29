@@ -1,0 +1,12 @@
+../Core/Src/main.c:73:6:DisplayNumber	11
+../Core/Src/main.c:150:6:CheckLDRs	7
+../Core/Src/main.c:225:5:main	2
+../Core/Src/main.c:277:6:SystemClock_Config	3
+../Core/Src/main.c:325:13:MX_I2C1_Init	2
+../Core/Src/main.c:359:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:392:13:MX_GPIO_Init	1
+../Core/Src/main.c:462:6:HAL_I2C_ListenCpltCallback	1
+../Core/Src/main.c:467:6:HAL_I2C_SlaveTxCpltCallback	1
+../Core/Src/main.c:474:6:HAL_I2C_SlaveRxCpltCallback	2
+../Core/Src/main.c:482:6:HAL_I2C_AddrCallback	5
+../Core/Src/main.c:501:6:Error_Handler	1

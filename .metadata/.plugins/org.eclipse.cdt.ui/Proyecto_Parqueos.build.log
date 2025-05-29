@@ -1,0 +1,10 @@
+11:36:57 **** Incremental Build of configuration Debug for project Proyecto_Parqueos ****
+make -j8 all 
+arm-none-eabi-size  Proyecto_Parqueos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19056	     12	   1732	  20800	   5140	Proyecto_Parqueos.elf
+Finished building: default.size.stdout
+ 
+
+11:36:58 Build Finished. 0 errors, 0 warnings. (took 554ms)
+

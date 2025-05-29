@@ -51,7 +51,9 @@ SPI_HandleTypeDef hspi1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-char msg[50];
+
+
+  char msg[50];
   uint8_t valorLDR5 = 0;
   uint8_t valorLDR6 = 0;
   uint8_t valorLDR7 = 0;
@@ -59,12 +61,25 @@ char msg[50];
 
 
   //Variables útiles para comunicación I2C
-  uint8_t green_count_local = 0;
+#define TXBUFFERSIZE 4
+#define RXBUFFERSIZE 4
 
-  uint8_t buffer;
+int count = 0;
 
-  uint8_t aRxBuffer[4] = {0};
-  uint8_t aTxBuffer[4] = {0};
+uint8_t aTxBuffer[TXBUFFERSIZE];
+/*
+ * Si alguno de los bytes en el buffer aTXBuffer se encuentra en 1 es porque ese espacio está ocupado
+ *
+ * */
+
+uint8_t aRxBuffer[RXBUFFERSIZE];
+
+uint8_t Park5_available = 0;
+uint8_t Park6_available = 0;
+uint8_t Park7_available = 0;
+uint8_t Park8_available = 0;
+
+
 
 /* USER CODE END PV */
 
@@ -117,7 +132,10 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
   LCD_Init();
-  HAL_I2C_EnableListen_IT(&hi2c1);
+
+  if (HAL_I2C_EnableListen_IT(&hi2c1) != HAL_OK){
+	  Error_Handler();
+  }
   //HAL_ADC_Start(&hadc1);
 
   //********************* Iniciliazación del fondo **********************************************
@@ -150,12 +168,14 @@ int main(void)
 	 	        HAL_GPIO_WritePin(GPIOC, LED5_G_Pin, GPIO_PIN_RESET);
 	 	        HAL_GPIO_WritePin(GPIOC, LED5_R_Pin, GPIO_PIN_SET);
 	 	       LCD_Sprite(0, 0, 70, 89, Car_red_prueba, 1, 0, 1, 0);
+	 	       Park5_available = 1;
 	 	      }
 	 	  else
 	 	      {
 	 	        HAL_GPIO_WritePin(GPIOC,  LED5_G_Pin, GPIO_PIN_SET);
 	 	        HAL_GPIO_WritePin(GPIOC,  LED5_R_Pin, GPIO_PIN_RESET);
-	 	       green_count_local++;
+	 	       //green_count_local++;
+	 	       Park5_available = 0;
 	 	        FillRect(0, 0, 70, 89, 0x4a49);
 	 	      }
 
@@ -165,13 +185,15 @@ int main(void)
 	 	 	 	  HAL_GPIO_WritePin(GPIOA, LED6_G_Pin, GPIO_PIN_RESET);
 	 	 	 	  HAL_GPIO_WritePin(GPIOA, LED6_R_Pin, GPIO_PIN_SET);
 	 	 	 	  LCD_Sprite(83, 0, 70, 89, Car_red_prueba, 1, 0, 1, 0);
+	 	 	 	  Park6_available = 1;
 	 	 	   }
 	 	 	 else
 	 	 	   {
 	 	 	       HAL_GPIO_WritePin(GPIOA,  LED6_G_Pin, GPIO_PIN_SET);
 	 	 	 	   HAL_GPIO_WritePin(GPIOA,  LED6_R_Pin, GPIO_PIN_RESET);
-	 	 	 	 green_count_local++;
+	 	 	 	 //green_count_local++;
 	 	 	 	   FillRect(83, 0, 70, 89, 0x4a49);
+	 	 	 	   Park6_available = 0;
 	 	 	 	}
 
 
@@ -181,13 +203,15 @@ int main(void)
 	 		 	 	 	  HAL_GPIO_WritePin(GPIOB, LED7_G_Pin, GPIO_PIN_RESET);
 	 		 	 	 	  HAL_GPIO_WritePin(GPIOB, LED7_R_Pin, GPIO_PIN_SET);
 	 		 	 	 	  LCD_Sprite(163, 0, 70, 89, Car_red_prueba, 1, 0, 1, 0);
+	 		 	 	 	Park7_available = 1;
 	 		 	 	   }
 	 		 	 	 else
 	 		 	 	   {
 	 		 	 	       HAL_GPIO_WritePin(GPIOB,  LED7_G_Pin, GPIO_PIN_SET);
 	 		 	 	 	   HAL_GPIO_WritePin(GPIOB,  LED7_R_Pin, GPIO_PIN_RESET);
-	 		 	 	 	 green_count_local++;
+	 		 	 	 	// green_count_local++;
 	 		 	 	 	   FillRect(163, 0, 70, 89, 0x4a49);
+	 		 	 	 	Park7_available = 0;
 	 		 	 	 	}
 
 
@@ -197,26 +221,28 @@ int main(void)
 	 		 		 		 	 	 	  HAL_GPIO_WritePin(GPIOB, LED8_G_Pin, GPIO_PIN_RESET);
 	 		 		 		 	 	 	  HAL_GPIO_WritePin(GPIOB, LED8_R_Pin, GPIO_PIN_SET);
 	 		 		 		 	 	 	  LCD_Sprite(243, 0, 70, 89, Car_red_prueba, 1, 0, 1, 0);
+	 		 		 		 	 	 Park8_available = 1;
 	 		 		 		 	 	   }
 	 		 		 		 	 	 else
 	 		 		 		 	 	   {
 	 		 		 		 	 	       HAL_GPIO_WritePin(GPIOB,  LED8_G_Pin, GPIO_PIN_SET);
 	 		 		 		 	 	 	   HAL_GPIO_WritePin(GPIOB,  LED8_R_Pin, GPIO_PIN_RESET);
-	 		 		 		 	 	  green_count_local++;
+	 		 		 		 	 	//  green_count_local++;
 	 		 		 		 	 	 	   FillRect(243, 0, 70, 89, 0x4a49);
+	 		 		 		 	 	 	Park8_available = 0;
 	 		 		 		 	 	 	}
 
 
 	 	      //HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-	 	     aTxBuffer[0] = green_count_local;
+	 	    /* aTxBuffer[0] = green_count_local;
 
 	 	        uint8_t green_count_remote = aRxBuffer[0];
 	 	        if (green_count_remote > 4) green_count_remote = 4;
 
 	 	        uint8_t total_green = green_count_local + green_count_remote;
 	 	        if (total_green > 8) total_green = 8;
-	 	      HAL_Delay(100);
+	 	      HAL_Delay(100);*/
 
 
 
@@ -292,7 +318,7 @@ static void MX_I2C1_Init(void)
   hi2c1.Instance = I2C1;
   hi2c1.Init.ClockSpeed = 100000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
-  hi2c1.Init.OwnAddress1 = 204;
+  hi2c1.Init.OwnAddress1 = 170;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
   hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
   hi2c1.Init.OwnAddress2 = 0;
@@ -406,8 +432,8 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LCD_CS_Pin|LED8_G_Pin|LED7_R_Pin|LCD_D6_Pin
-                          |LED7_G_Pin|LED8_R_Pin|LCD_D3_Pin|LCD_D5_Pin
-                          |LCD_D4_Pin|SD_SS_Pin, GPIO_PIN_RESET);
+                          |LED7_G_Pin|LD2_Pin|LED8_R_Pin|LCD_D3_Pin
+                          |LCD_D5_Pin|LCD_D4_Pin|SD_SS_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -438,11 +464,11 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LCD_CS_Pin LED8_G_Pin LED7_R_Pin LCD_D6_Pin
-                           LED7_G_Pin LED8_R_Pin LCD_D3_Pin LCD_D5_Pin
-                           LCD_D4_Pin SD_SS_Pin */
+                           LED7_G_Pin LD2_Pin LED8_R_Pin LCD_D3_Pin
+                           LCD_D5_Pin LCD_D4_Pin SD_SS_Pin */
   GPIO_InitStruct.Pin = LCD_CS_Pin|LED8_G_Pin|LED7_R_Pin|LCD_D6_Pin
-                          |LED7_G_Pin|LED8_R_Pin|LCD_D3_Pin|LCD_D5_Pin
-                          |LCD_D4_Pin|SD_SS_Pin;
+                          |LED7_G_Pin|LD2_Pin|LED8_R_Pin|LCD_D3_Pin
+                          |LCD_D5_Pin|LCD_D4_Pin|SD_SS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -460,29 +486,48 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
 void HAL_I2C_ListenCpltCallback(I2C_HandleTypeDef *hi2c) {
-    HAL_I2C_EnableListen_IT(hi2c);
+	HAL_I2C_EnableListen_IT(hi2c);
 }
 
-void HAL_I2C_AddrCallback(I2C_HandleTypeDef *hi2c, uint8_t TransferDirection, uint16_t AddrMatchCode) {
-    char dbg[64];
-    snprintf(dbg, sizeof(dbg), "I2C Addr Match: Dir=%d, Addr=0x%02X\r\n", TransferDirection, AddrMatchCode);
-    HAL_UART_Transmit(&huart2, (uint8_t*)dbg, strlen(dbg), HAL_MAX_DELAY);
 
-    if (TransferDirection == I2C_DIRECTION_TRANSMIT) {
-        HAL_I2C_Slave_Seq_Receive_IT(hi2c, aRxBuffer, sizeof(aRxBuffer), I2C_FIRST_AND_LAST_FRAME);
-    } else {
-        HAL_I2C_Slave_Seq_Transmit_IT(hi2c, aTxBuffer, sizeof(aTxBuffer), I2C_FIRST_AND_LAST_FRAME);
-    }
+void HAL_I2C_SlaveTxCpltCallback(I2C_HandleTypeDef *I2cHandle) {
+	aTxBuffer[0] = Park5_available;
+	aTxBuffer[1] = Park6_available;
+	aTxBuffer[2] = Park7_available;
+	aTxBuffer[3] = Park8_available;
+
 }
 
-void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *hi2c) {
-    // Opcional: manejar recepción si es necesario
+
+void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *I2cHnadle) {
+	HAL_UART_Transmit(&huart2, aRxBuffer, 4, 1000);
+	if(aRxBuffer[0] == 'S'){
+		//HAL_GPIO_WritePin(GPIOB, LD2_Pin, GPIO_PIN_SET);
+		HAL_Delay(900);
+	}else{//HAL_GPIO_WritePin(GPIOB, LD2_Pin, GPIO_PIN_RESET);
+		}
 }
 
-void HAL_I2C_SlaveTxCpltCallback(I2C_HandleTypeDef *hi2c) {
-    // Opcional: manejar transmisión si es necesario
+
+void HAL_I2C_AddrCallback(I2C_HandleTypeDef *hi2c, uint8_t TransferDirection, uint16_t AddrMatchCode){
+	if (TransferDirection == I2C_DIRECTION_TRANSMIT){
+		if (HAL_I2C_Slave_Seq_Receive_IT(&hi2c1, (uint8_t*) aRxBuffer,
+				RXBUFFERSIZE, I2C_FIRST_AND_LAST_FRAME) !=HAL_OK) {
+			Error_Handler();
+		}
+	} else if (TransferDirection == I2C_DIRECTION_RECEIVE) {
+		if (HAL_I2C_Slave_Seq_Transmit_IT(&hi2c1, (uint8_t*) aTxBuffer, 4, I2C_FIRST_AND_LAST_FRAME) != HAL_OK){
+			Error_Handler();
+		}
+	}
+
+
+}
+
+
+void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *I2cHandle){
+	HAL_GPIO_WritePin(GPIOB, LD2_Pin, GPIO_PIN_SET);
 }
 
 
@@ -492,6 +537,7 @@ void HAL_I2C_SlaveTxCpltCallback(I2C_HandleTypeDef *hi2c) {
   * @brief  This function is executed in case of error occurrence.
   * @retval None
   */
+
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
@@ -502,6 +548,7 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
+
 
 #ifdef  USE_FULL_ASSERT
 /**
